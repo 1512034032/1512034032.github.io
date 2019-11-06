@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>第一篇博客 | Hexo</title>
+  <title>ajax | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="第一篇博客 | Hexo">
+  <meta name="description" content="ajax | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
@@ -254,9 +254,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-ajax" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">第一篇博客</h1>
+        <h1 class="article-title">ajax</h1>
     
     <div class="article-meta">
         
@@ -266,7 +266,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-05 09:05:44'>2019-11-05 08:45</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-22 17:07:01'>2019-11-06 14:02</time>
         
     </div>
     <div class="article-meta">
@@ -288,7 +288,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#滴滴"><span class="toc-text">滴滴</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ajax"><span class="toc-text">ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原生js"><span class="toc-text">原生js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JQuery"><span class="toc-text">JQuery</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue1-0"><span class="toc-text">Vue1.0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue2-0"><span class="toc-text">Vue2.0</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fecth："><span class="toc-text">fecth：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#axios："><span class="toc-text">axios：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#执行多个并发请求"><span class="toc-text">执行多个并发请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#拦截器"><span class="toc-text">拦截器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#全局的-axios-默认值"><span class="toc-text">全局的 axios 默认值</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -304,7 +304,115 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="滴滴"><a href="#滴滴" class="headerlink" title="滴滴"></a>滴滴</h4>
+        <h1 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h1><h3 id="原生js"><a href="#原生js" class="headerlink" title="原生js"></a>原生js</h3><pre><code class="js">let xhr = new XMLHttpRequest()
+xhr.open(&#39;GET/POST&#39;,url)//请求方式和地址
+xhr.end(null/{})//GET方式为 null POST方式需写要传的参数
+xhr.onload = function(){
+    if(status==200){
+        let obj = xhr.responseText//请求成功后返回的数据
+    }
+}</code></pre>
+<h3 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a>JQuery</h3><pre><code class="js">$.ajax({
+    url:&#39;&#39;, // 发起 ajax 请求的地址
+    data:&#39;GET/POST&#39;, // 请求方式
+    TypeData:&#39;json&#39;, // 请求成功后返回的数据类型
+    Headers:{}, // 发送请求时请求头中需要传入的数据
+    success:function(data){
+        // data 为请求成功后返回的数据
+    },
+    error:function(err){
+        // err
+    }
+})</code></pre>
+<h3 id="Vue1-0"><a href="#Vue1-0" class="headerlink" title="Vue1.0"></a>Vue1.0</h3><pre><code>采用 Vue-resource API</code></pre><pre><code class="js">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue-resource@1.3.4&quot;&gt;&lt;/script&gt;
+//Eg:百度接口
+var api=&#39;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=php&#39;;
+var that=this;
+this.$http.jsonp(api,{
+    jsonp:&#39;cb&#39;
+}).then(function(data){
+    console.log(data.body);
+    that.list=data.body.s;
+},function(){
+})</code></pre>
+<h3 id="Vue2-0"><a href="#Vue2-0" class="headerlink" title="Vue2.0"></a>Vue2.0</h3><h4 id="fecth："><a href="#fecth：" class="headerlink" title="fecth："></a>fecth：</h4><pre><code>使用方法</code></pre><pre><code class="js">    fetch(&#39;/users&#39;, {
+        method: &#39;POST&#39;, // 请求方式
+        headers: { // 头部信息
+        &#39;Content-Type&#39;: &#39;application/json&#39;
+        },
+        body: JSON.stringify({ // 参数
+            name: &#39;Hubot&#39;,
+            login: &#39;hubot&#39;,
+        })
+    }).then(function(),function())</code></pre>
+<pre><code>简写</code></pre><pre><code class="js">fetch(&#39;/users.json&#39;)
+    .then(function(response) { // 第一个函数处理返回数据的类型，注意位置
+        return response.json()
+    }).then(function(json) { // 第二个函数的参数表示返回值
+        console.log(&#39;parsed json&#39;, json)
+    }).catch(function(ex) { // 请求失败后的处理函数及错误的返回值
+        console.log(&#39;parsing failed&#39;, ex)
+    })</code></pre>
+<h4 id="axios："><a href="#axios：" class="headerlink" title="axios："></a>axios：</h4><pre><code>使用方法：</code></pre><pre><code class="js">axios({
+    url:&#39;&#39;,
+    method:&#39;GET/POST&#39;,
+    data:{}, // params:{}/data:{},GET请求时传参用 params POST请求时传参用 data
+    headers:{}
+}).then(res=&gt;{
+    // res 请求成功后返回的数据
+})</code></pre>
+<h4 id="执行多个并发请求"><a href="#执行多个并发请求" class="headerlink" title="执行多个并发请求"></a>执行多个并发请求</h4><pre><code class="js">function getUserAccount() {
+    return axios.get(&#39;/user/12345&#39;);
+}
+
+function getUserPermissions() {
+    return axios.get(&#39;/user/12345/permissions&#39;);
+}
+
+axios.all([getUserAccount(), getUserPermissions()])
+    .then(axios.spread(function (acct, perms) {
+    // 两个请求现在都执行完成 
+    // 第一个参数表示第一个请求的返回值，第二个参数表示第二个请求的返回值
+}));</code></pre>
+<h4 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h4><pre><code>在请求或响应被 then 或 catch 处理前拦截它们。</code></pre><pre><code class="js">// 添加请求拦截器
+axios.interceptors.request.use(function (config) {
+    // 在发送请求之前做些什么
+    return config;
+}, function (error) {
+    // 对请求错误做些什么
+    return Promise.reject(error);
+});
+
+// 添加响应拦截器
+axios.interceptors.response.use(function (response) {
+    // 对响应数据做点什么
+    return response;
+}, function (error) {
+    // 对响应错误做点什么
+    return Promise.reject(error);
+});</code></pre>
+<pre><code>如果你想在稍后移除拦截器，可以这样：</code></pre><pre><code class="js">var myInterceptor = axios.interceptors.request.use(function () {/*...*/});
+axios.interceptors.request.eject(myInterceptor);</code></pre>
+<h4 id="全局的-axios-默认值"><a href="#全局的-axios-默认值" class="headerlink" title="全局的 axios 默认值"></a>全局的 axios 默认值</h4><pre><code class="js">axios.defaults.baseURL = &#39;https://api.example.com&#39;; // 设置全局公共 API 跟地址
+axios.defaults.headers.common[&#39;Authorization&#39;] = AUTH_TOKEN; // 设置全局 headers 携带的数据
+axios.defaults.headers.post[&#39;Content-Type&#39;] = &#39;application/x-www-form-urlencoded&#39;; // 设置 POST 请求头的类型</code></pre>
+<pre><code>某个请求的响应包含以下信息</code></pre><pre><code class="js">{
+    // `data` 由服务器提供的响应
+    data: {},
+
+    // `status` 来自服务器响应的 HTTP 状态码
+    status: 200,
+
+    // `statusText` 来自服务器响应的 HTTP 状态信息
+    statusText: &#39;OK&#39;,
+
+    // `headers` 服务器响应的头
+    headers: {},
+
+    // `config` 是为请求提供的配置信息
+    config: {}
+}</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -317,12 +425,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>第一篇博客</p>
+    <p><span class="copy-title">文章标题:</span>ajax</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" target="_blank" rel="noopener" title="孤狼">孤狼</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-11-05, 08:45:26</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-05, 09:05:44</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/05/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="第一篇博客">http://yoursite.com/2019/11/05/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-06, 14:02:06</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-22, 17:07:01</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/06/ajax/" title="ajax">http://yoursite.com/2019/11/06/ajax/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

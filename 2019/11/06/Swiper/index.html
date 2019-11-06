@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>第一篇博客 | Hexo</title>
+  <title>Swiper | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="第一篇博客 | Hexo">
+  <meta name="description" content="Swiper | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
@@ -254,9 +254,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Swiper" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">第一篇博客</h1>
+        <h1 class="article-title">Swiper</h1>
     
     <div class="article-meta">
         
@@ -266,7 +266,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-05 09:05:44'>2019-11-05 08:45</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-24 10:57:31'>2019-11-06 14:02</time>
         
     </div>
     <div class="article-meta">
@@ -288,7 +288,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#滴滴"><span class="toc-text">滴滴</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -304,7 +304,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="滴滴"><a href="#滴滴" class="headerlink" title="滴滴"></a>滴滴</h4>
+        <pre><code class="html">&lt;div class=&quot;swiper-container&quot;&gt;
+    &lt;div class=&quot;swiper-wrapper&quot;&gt;
+        &lt;div class=&quot;swiper-slide slide1&quot;&gt;Slide 1&lt;/div&gt;
+        &lt;div class=&quot;swiper-slide slide2&quot;&gt;Slide 2&lt;/div&gt;
+        &lt;div class=&quot;swiper-slide slide3&quot;&gt;Slide 3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 如果需要分页器 --&gt;
+    &lt;div class=&quot;swiper-pagination&quot;&gt;&lt;/div&gt;
+
+    &lt;!-- 如果需要导航按钮 --&gt;
+    &lt;div class=&quot;swiper-button-prev swiper-button-black&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;swiper-button-next swiper-button-white&quot;&gt;&lt;/div&gt;
+
+    &lt;!-- 如果需要滚动条 --&gt;
+    &lt;!-- &lt;div class=&quot;swiper-scrollbar&quot;&gt;&lt;/div&gt; --&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    var mySwiper = new Swiper(&#39;.swiper-container&#39;, {
+        // direction: &#39;vertical&#39;, // 垂直切换选项
+        // direction: &#39;vertical&#39;, // 垂直切换选项
+        loop: true, // 循环模式选项
+
+        // 如果需要分页器
+        pagination: {
+            el: &#39;.swiper-pagination&#39;,
+        },
+
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: &#39;.swiper-button-next&#39;,
+            prevEl: &#39;.swiper-button-prev&#39;,
+        },
+
+        // 如果需要滚动条
+        // scrollbar: {
+        //   el: &#39;.swiper-scrollbar&#39;,
+        // },
+    })
+&lt;/script&gt;</code></pre>
+<pre><code class="js">freeMode
+默认为false，普通模式：slide滑动时只滑动一格，并自动贴合wrapper，设置为true则变为free模式，slide会根据惯性滑动可能不止一格且不会贴合。
+freeModeSticky
+使得freeMode也能自动贴合。
+disableOnInteraction
+用户操作swiper之后，是否禁止autoplay。默认为true：停止。
+如果设置为false，用户操作swiper之后自动切换不会停止，每次都会重新启动autoplay。
+操作包括触碰，拖动，点击pagination等。</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -317,12 +364,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>第一篇博客</p>
+    <p><span class="copy-title">文章标题:</span>Swiper</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" target="_blank" rel="noopener" title="孤狼">孤狼</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-11-05, 08:45:26</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-05, 09:05:44</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/05/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="第一篇博客">http://yoursite.com/2019/11/05/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-06, 14:02:06</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-24, 10:57:31</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/06/Swiper/" title="Swiper">http://yoursite.com/2019/11/06/Swiper/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
