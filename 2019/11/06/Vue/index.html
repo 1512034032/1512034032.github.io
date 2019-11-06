@@ -261,7 +261,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-26 19:34:47'>2019-11-06 14:02</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-06 14:18:16'>2019-11-06 14:02</time>
         
     </div>
     <div class="article-meta">
@@ -376,18 +376,21 @@
     beforeDestroy
     destroyed
 --&gt;</code></pre>
-<h4 id="Vue监听"><a href="#Vue监听" class="headerlink" title="Vue监听"></a>Vue监听</h4><pre><code>局部：</code></pre><pre><code class="js">watch:{ // 监听 data 数据里的 ipt
+<h4 id="Vue监听"><a href="#Vue监听" class="headerlink" title="Vue监听"></a>Vue监听</h4><p>局部：</p>
+<pre><code class="js">watch:{ // 监听 data 数据里的 ipt
     ipt:function(newvale,oldvalue){
         console.log(newvale) // 返回发生变化后的新数据
         console.log(oldvalue) // 返回发生变化前的旧数据
     }
 }</code></pre>
-<pre><code>全局：</code></pre><pre><code class="js">Vue.$watch(ipt,function(newvale,oldvalue){
+<p>全局：</p>
+<pre><code class="js">Vue.$watch(ipt,function(newvale,oldvalue){
     console.log(newvale)
     console.log(oldvalue)
 })</code></pre>
 <h4 id="Vue-自定义组件"><a href="#Vue-自定义组件" class="headerlink" title="Vue 自定义组件"></a>Vue 自定义组件</h4><p>关键字 <code>component</code>表示注册组件 <code>template</code>生成组件内容</p>
-<pre><code>全局定义</code></pre><pre><code class="js">// 第一个参数 表示组件的名称 第二个参数表示组件的内容 template 参数 data 方法 methods 等等
+<p>全局定义</p>
+<pre><code class="js">// 第一个参数 表示组件的名称 第二个参数表示组件的内容 template 参数 data 方法 methods 等等
 Vue.component(&#39;v-con&#39;,Vue.extend{ // Vue.extend 可省略
     template:&#39;&lt;div&gt;content&lt;/div&gt;&#39;,
     data(){
@@ -398,7 +401,8 @@ Vue.component(&#39;v-con&#39;,Vue.extend{ // Vue.extend 可省略
     }
 })
 </code></pre>
-<pre><code>局部组件 组件嵌套组件 父组件向子组件传值</code></pre><pre><code class="html">&lt;template id=&quot;fu&quot;&gt; // 创建组件内容 根据 id 作为唯一指定
+<p>局部组件 组件嵌套组件 父组件向子组件传值</p>
+<pre><code class="html">&lt;template id=&quot;fu&quot;&gt; // 创建组件内容 根据 id 作为唯一指定
     &lt;div&gt;
         &lt;h2&gt;父组件&lt;/h2&gt;
         &lt;p&gt;{{title}}&lt;/p&gt;
@@ -443,7 +447,8 @@ Vue.component(&#39;v-con&#39;,Vue.extend{ // Vue.extend 可省略
         }
     })
 &lt;/script&gt;</code></pre>
-<pre><code>组件 子组件向父组件传值</code></pre><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+<p>组件 子组件向父组件传值</p>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
     &lt;v-parent&gt;&lt;/v-parent&gt;
 &lt;/div&gt;
 &lt;template id=&quot;parent&quot;&gt;
@@ -495,7 +500,8 @@ Vue.component(&#39;v-con&#39;,Vue.extend{ // Vue.extend 可省略
         }
     })
 &lt;/script&gt;</code></pre>
-<pre><code>同级别组件之间传值</code></pre><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+<p>同级别组件之间传值</p>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
     &lt;v-a&gt;&lt;/v-a&gt;
     &lt;hr&gt;
     &lt;v-b&gt;&lt;/v-b&gt;
@@ -580,7 +586,8 @@ Vue.component(&#39;v-con&#39;,Vue.extend{ // Vue.extend 可省略
         }
     })
 &lt;/script&gt;</code></pre>
-<h4 id="组件之间的互相操作"><a href="#组件之间的互相操作" class="headerlink" title="组件之间的互相操作"></a>组件之间的互相操作</h4><pre><code>父操作子组件</code></pre><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+<h4 id="组件之间的互相操作"><a href="#组件之间的互相操作" class="headerlink" title="组件之间的互相操作"></a>组件之间的互相操作</h4><p>父操作子组件</p>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
     &lt;h2&gt;父操作子组件&lt;/h2&gt;
     &lt;v-parent&gt;&lt;/v-parent&gt;
 &lt;/div&gt;
@@ -633,7 +640,8 @@ Vue.component(&#39;v-con&#39;,Vue.extend{ // Vue.extend 可省略
     })
 &lt;/script&gt;
 </code></pre>
-<pre><code>子操作父组件</code></pre><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+<p>子操作父组件</p>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
             &lt;h2&gt;父操作子组件&lt;/h2&gt;
             &lt;v-parent&gt;&lt;/v-parent&gt;
         &lt;/div&gt;
@@ -688,7 +696,8 @@ Vue.component(&#39;v-con&#39;,Vue.extend{ // Vue.extend 可省略
             })
         &lt;/script&gt;
 </code></pre>
-<pre><code>$nextTick 用于获取修改后的最新 DOM 实例模板</code></pre><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+<p>$nextTick 用于获取修改后的最新 DOM 实例模板</p>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
     &lt;h2&gt;nextTick&lt;/h2&gt;
     &lt;p ref=&#39;tit&#39;&gt;{{title}}&lt;/p&gt;
 &lt;/div&gt;
@@ -738,7 +747,8 @@ Vue.component(&#39;v-con&#39;,Vue.extend{ // Vue.extend 可省略
         }
     })
 &lt;/script&gt;</code></pre>
-<h4 id="Vue-自定义指令"><a href="#Vue-自定义指令" class="headerlink" title="Vue 自定义指令"></a>Vue 自定义指令</h4><pre><code>全局</code></pre><pre><code class="js">Vue.directive(&#39;color&#39;,{ //全局生成自定义指令
+<h4 id="Vue-自定义指令"><a href="#Vue-自定义指令" class="headerlink" title="Vue 自定义指令"></a>Vue 自定义指令</h4><p>全局</p>
+<pre><code class="js">Vue.directive(&#39;color&#39;,{ //全局生成自定义指令
     // 1.第一个参数表示指令名称 color，生成指定的时候不需要加上 v-，使用方法&lt;p v-color&gt;&lt;/p&gt;
     // 2.第二个参数 可设置指令在哪个阶段执行
     // 3.1.方法中的第一个参数表示 绑定指定的 DOM 元素
@@ -759,7 +769,8 @@ Vue.component(&#39;v-con&#39;,Vue.extend{ // Vue.extend 可省略
     update:function(el){ // 当 VNode 更新的时候,会执行 upddate ,可能会触发多次
     }
 })</code></pre>
-<pre><code>局部</code></pre><pre><code class="js">new Vue({
+<p>局部</p>
+<pre><code class="js">new Vue({
     el:&#39;#app&#39;,
     data:{
         str:&#39;red&#39;
@@ -792,7 +803,7 @@ Vue.component(&#39;v-con&#39;,Vue.extend{ // Vue.extend 可省略
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" target="_blank" rel="noopener" title="孤狼">孤狼</a></p>
     <p><span class="copy-title">发布时间:</span>2019-11-06, 14:02:06</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-26, 19:34:47</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-06, 14:18:16</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/06/Vue/" title="Vue">http://yoursite.com/2019/11/06/Vue/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -822,7 +833,7 @@ Vue.component(&#39;v-con&#39;,Vue.extend{ // Vue.extend 可省略
 
     </div>
 </div>
-<a class="" id="rocket" href="javascript:void(0)" target="_blank" rel="noopener"></a>
+<a class="" id="rocket" href="javascript:;" target="_blank" rel="noopener"></a>
     </div>
 </div>
 <div class="acParent"></div>

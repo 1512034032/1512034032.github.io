@@ -261,7 +261,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-22 17:07:01'>2019-11-06 14:02</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-06 14:16:38'>2019-11-06 14:02</time>
         
     </div>
     <div class="article-meta">
@@ -319,7 +319,8 @@ xhr.onload = function(){
         // err
     }
 })</code></pre>
-<h3 id="Vue1-0"><a href="#Vue1-0" class="headerlink" title="Vue1.0"></a>Vue1.0</h3><pre><code>采用 Vue-resource API</code></pre><pre><code class="js">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue-resource@1.3.4&quot;&gt;&lt;/script&gt;
+<h3 id="Vue1-0"><a href="#Vue1-0" class="headerlink" title="Vue1.0"></a>Vue1.0</h3><p>采用 Vue-resource API</p>
+<pre><code class="js">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue-resource@1.3.4&quot;&gt;&lt;/script&gt;
 //Eg:百度接口
 var api=&#39;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=php&#39;;
 var that=this;
@@ -330,7 +331,8 @@ this.$http.jsonp(api,{
     that.list=data.body.s;
 },function(){
 })</code></pre>
-<h3 id="Vue2-0"><a href="#Vue2-0" class="headerlink" title="Vue2.0"></a>Vue2.0</h3><h4 id="fecth："><a href="#fecth：" class="headerlink" title="fecth："></a>fecth：</h4><pre><code>使用方法</code></pre><pre><code class="js">    fetch(&#39;/users&#39;, {
+<h3 id="Vue2-0"><a href="#Vue2-0" class="headerlink" title="Vue2.0"></a>Vue2.0</h3><h4 id="fecth："><a href="#fecth：" class="headerlink" title="fecth："></a>fecth：</h4><p>使用方法</p>
+<pre><code class="js">    fetch(&#39;/users&#39;, {
         method: &#39;POST&#39;, // 请求方式
         headers: { // 头部信息
         &#39;Content-Type&#39;: &#39;application/json&#39;
@@ -340,7 +342,8 @@ this.$http.jsonp(api,{
             login: &#39;hubot&#39;,
         })
     }).then(function(),function())</code></pre>
-<pre><code>简写</code></pre><pre><code class="js">fetch(&#39;/users.json&#39;)
+<p>简写</p>
+<pre><code class="js">fetch(&#39;/users.json&#39;)
     .then(function(response) { // 第一个函数处理返回数据的类型，注意位置
         return response.json()
     }).then(function(json) { // 第二个函数的参数表示返回值
@@ -348,7 +351,8 @@ this.$http.jsonp(api,{
     }).catch(function(ex) { // 请求失败后的处理函数及错误的返回值
         console.log(&#39;parsing failed&#39;, ex)
     })</code></pre>
-<h4 id="axios："><a href="#axios：" class="headerlink" title="axios："></a>axios：</h4><pre><code>使用方法：</code></pre><pre><code class="js">axios({
+<h4 id="axios："><a href="#axios：" class="headerlink" title="axios："></a>axios：</h4><p>使用方法：</p>
+<pre><code class="js">axios({
     url:&#39;&#39;,
     method:&#39;GET/POST&#39;,
     data:{}, // params:{}/data:{},GET请求时传参用 params POST请求时传参用 data
@@ -369,7 +373,8 @@ axios.all([getUserAccount(), getUserPermissions()])
     // 两个请求现在都执行完成 
     // 第一个参数表示第一个请求的返回值，第二个参数表示第二个请求的返回值
 }));</code></pre>
-<h4 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h4><pre><code>在请求或响应被 then 或 catch 处理前拦截它们。</code></pre><pre><code class="js">// 添加请求拦截器
+<h4 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h4><p>在请求或响应被 then 或 catch 处理前拦截它们。</p>
+<pre><code class="js">// 添加请求拦截器
 axios.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么
     return config;
@@ -386,12 +391,14 @@ axios.interceptors.response.use(function (response) {
     // 对响应错误做点什么
     return Promise.reject(error);
 });</code></pre>
-<pre><code>如果你想在稍后移除拦截器，可以这样：</code></pre><pre><code class="js">var myInterceptor = axios.interceptors.request.use(function () {/*...*/});
+<p>如果你想在稍后移除拦截器，可以这样：</p>
+<pre><code class="js">var myInterceptor = axios.interceptors.request.use(function () {/*...*/});
 axios.interceptors.request.eject(myInterceptor);</code></pre>
 <h4 id="全局的-axios-默认值"><a href="#全局的-axios-默认值" class="headerlink" title="全局的 axios 默认值"></a>全局的 axios 默认值</h4><pre><code class="js">axios.defaults.baseURL = &#39;https://api.example.com&#39;; // 设置全局公共 API 跟地址
 axios.defaults.headers.common[&#39;Authorization&#39;] = AUTH_TOKEN; // 设置全局 headers 携带的数据
 axios.defaults.headers.post[&#39;Content-Type&#39;] = &#39;application/x-www-form-urlencoded&#39;; // 设置 POST 请求头的类型</code></pre>
-<pre><code>某个请求的响应包含以下信息</code></pre><pre><code class="js">{
+<p>某个请求的响应包含以下信息</p>
+<pre><code class="js">{
     // `data` 由服务器提供的响应
     data: {},
 
@@ -424,7 +431,7 @@ axios.defaults.headers.post[&#39;Content-Type&#39;] = &#39;application/x-www-for
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" target="_blank" rel="noopener" title="孤狼">孤狼</a></p>
     <p><span class="copy-title">发布时间:</span>2019-11-06, 14:02:06</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-22, 17:07:01</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-06, 14:16:38</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/06/ajax/" title="ajax">http://yoursite.com/2019/11/06/ajax/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -454,7 +461,7 @@ axios.defaults.headers.post[&#39;Content-Type&#39;] = &#39;application/x-www-for
 
     </div>
 </div>
-<a class="" id="rocket" href="javascript:void(0)" target="_blank" rel="noopener"></a>
+<a class="" id="rocket" href="javascript:;" target="_blank" rel="noopener"></a>
     </div>
 </div>
 <div class="acParent"></div>
