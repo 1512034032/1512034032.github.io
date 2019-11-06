@@ -293,7 +293,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-06 19:21:36'>2019-11-06 19:15</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-06 19:33:04'>2019-11-06 19:15</time>
         
     </div>
     <div class="article-meta">
@@ -504,8 +504,8 @@ calc字符之间加空格
     &lt;input type=&quot;hidden&quot;&gt;&lt;!--隐藏框--&gt; 
 &lt;/fieldset&gt;</code></pre>
 <p><code>&lt;input type=&quot;属性&quot;&gt;</code></p>
-<ol>
-<li><p>type新属性<br>Search/tel/url/email/number/range/color/Datetime/date/month/week/time/datetime-local</p>
+<ul>
+<li><p>type新属性<br>Search / tel / url / email / number / range / color / Datetime / date / month / week / time / datetime-local</p>
 </li>
 <li><p>新增的表单属性的语法及应用</p>
 <ul>
@@ -518,27 +518,29 @@ calc字符之间加空格
 <li>max:最大值，适用于属性type为number和range</li>
 <li>step:间隔</li>
 <li>list属性：结合datalist元素使用</li>
-<li>取消验证：可以对form表单添加novalidate属性，即使form表单中的input添加了required，也将不进行验证<pre><code class="html">&lt;input type=&quot;text&quot; list=&quot;datalist id名aaaaa&quot;&gt;
-&lt;datalist id=&quot;aaaaa&quot;&gt;
-&lt;option value=&quot;值&quot; label=&quot;提示信息&quot;&gt;
-&lt;option value=&quot;值&quot; label=&quot;提示信息&quot;&gt;
-&lt;option value=&quot;值&quot; label=&quot;提示信息&quot;&gt;
-&lt;option value=&quot;值&quot; label=&quot;提示信息&quot;&gt;
-&lt;option value=&quot;值&quot; label=&quot;提示信息&quot;&gt;
-&lt;/datalist&gt;</code></pre>
-1）Datalist ：选项列表<br>input中输入list属性，属性值为该标签的id值，标签中子标签使用option，设置value和label<br>例：<pre><code>&lt;input type=“text” list=“id名&quot; /&gt;
-&lt;datalist id=“id名&quot;&gt;
-       &lt;option label=“提示信息”     value=“值“ &gt;
-       &lt;option label=&quot;提示信息&quot;   Value=&quot;值“ &gt;
-&lt;/datalist&gt;</code></pre>提示：option 元素永远都要设置 value 属性。<br>2）output:表示不同类型的输出，比如脚本的输出<br>注：必须从属于某个表单。即，必须将它书写在表单内部，或对它添加form属性。<pre><code>&lt;form oninput=&quot;x.value=parseInt(a.value)+parseInt(b.value)&quot; &gt;
-   &lt;input type=&quot;range&quot; id=&quot;a&quot; value=&quot;50&quot; min=&quot;0&quot; max=&quot;100&quot;/&gt; +
-   &lt;input type=&quot;number&quot; id=&quot;b&quot; value=&quot;50&quot;/&gt;=
-   &lt;output name=&quot;x&quot; for=&quot;a b&quot;&gt;&lt;/output&gt;
-&lt;/form&gt;</code></pre></li>
+<li>取消验证：可以对form表单添加novalidate属性，即使form表单中的input添加了required，也将不进行验证</li>
 </ul>
 </li>
-</ol>
-<h4 id="h5新标签"><a href="#h5新标签" class="headerlink" title="h5新标签"></a>h5新标签</h4><pre><code>&lt;!--h5新标签--&gt;
+</ul>
+<pre><code class="html">&lt;input type=&quot;text&quot; list=&quot;datalist id名aaaaa&quot;&gt;
+&lt;datalist id=&quot;aaaaa&quot;&gt;
+    &lt;option value=&quot;值&quot; label=&quot;提示信息&quot;&gt;
+    &lt;option value=&quot;值&quot; label=&quot;提示信息&quot;&gt;
+    &lt;option value=&quot;值&quot; label=&quot;提示信息&quot;&gt;
+    &lt;option value=&quot;值&quot; label=&quot;提示信息&quot;&gt;
+    &lt;option value=&quot;值&quot; label=&quot;提示信息&quot;&gt;
+&lt;/datalist&gt;</code></pre>
+<p>1）Datalist ：选项列表<br>input中输入list属性，属性值为该标签的id值，标签中子标签使用option，设置value和label<br>例：</p>
+<pre><code>&lt;input type=“text” list=“id名&quot; /&gt;
+&lt;datalist id=“id名&quot;&gt;
+            &lt;option label=“提示信息”     value=“值“ &gt;
+            &lt;option label=&quot;提示信息&quot;   Value=&quot;值“ &gt;
+&lt;/datalist&gt;</code></pre><p>提示：option 元素永远都要设置 value 属性。<br>2）output:表示不同类型的输出，比如脚本的输出<br>注：必须从属于某个表单。即，必须将它书写在表单内部，或对它添加form属性。</p>
+<pre><code>&lt;form oninput=&quot;x.value=parseInt(a.value)+parseInt(b.value)&quot; &gt;
+        &lt;input type=&quot;range&quot; id=&quot;a&quot; value=&quot;50&quot; min=&quot;0&quot; max=&quot;100&quot;/&gt; +
+        &lt;input type=&quot;number&quot; id=&quot;b&quot; value=&quot;50&quot;/&gt;=
+        &lt;output name=&quot;x&quot; for=&quot;a b&quot;&gt;&lt;/output&gt;
+&lt;/form&gt;</code></pre><h4 id="h5新标签"><a href="#h5新标签" class="headerlink" title="h5新标签"></a>h5新标签</h4><pre><code>&lt;!--h5新标签--&gt;
 &lt;header&gt;头&lt;/header&gt;
 &lt;footer&gt;尾&lt;/footer&gt;
 &lt;nav&gt;导航&lt;/nav&gt;
@@ -822,7 +824,7 @@ step-end 动画分成10步，动画执行时以结尾端点为开始，默认值
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" target="_blank" rel="noopener" title="小学徒">小学徒</a></p>
     <p><span class="copy-title">发布时间:</span>2019-11-06, 19:15:21</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-06, 19:21:36</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-06, 19:33:04</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/06/html/" title="HTML">http://yoursite.com/2019/11/06/html/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
