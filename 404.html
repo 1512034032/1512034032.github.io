@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Vue动画 | 学术渊</title>
+  <title>404 | 学术渊</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Vue动画 | 学术渊">
+  <meta name="description" content="404 | 学术渊">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -303,30 +303,24 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Vue动画" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Vue动画</h1>
+        <h1 class="article-title">404</h1>
     
     <div class="article-meta">
         
         
-        
-        <span class="book">
-            
-                <a href="javascript:" target="_blank" data-rel="Vue noopener">Vue</a>
-            
-        </span>
         
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-06 15:08:24'>2019-11-06 14:02</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-07 11:15:57'>2019-11-07 11:15</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:539</span>
+        <span>字数:14</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -345,7 +339,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-动画"><span class="toc-text">Vue 动画</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#很抱歉，您所访问的地址并不存在"><span class="toc-text">很抱歉，您所访问的地址并不存在</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -361,80 +355,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Vue-动画"><a href="#Vue-动画" class="headerlink" title="Vue 动画"></a>Vue 动画</h1><p><img src="./mdimg/transition.png" alt=""></p>
-<pre><code class="html">&lt;style type=&quot;text/css&quot;&gt;
-    .v-enter, // 开始进入动画的状态
-    .v-leave-to{ // 结束动画时的状态
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    .v-enter-active, // 进入动画的开始状态到结束状态
-    .v-leave-active{ // 离开动画的开始状态到结束状态
-        transition: all 1s ease;
-    }
-&lt;/style&gt;
-&lt;div id=&quot;app&quot;&gt;
-    &lt;transition&gt; // Vue 动画写在 transition 标签中
-        &lt;h3&gt;ww&lt;/h3&gt;
-    &lt;/transition&gt;
-&lt;/div&gt;</code></pre>
-<p>简写</p>
-<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
-    &lt;transiton enter-active-class=&quot;animated&quot; leave-active-class=&quot;&quot; :duration=&quot;{enter:3000,leave:5000}&gt;
-    &lt;!-- //设置进入动画的样式 如果使用 animate.css 需先添加默认样式 animated 
-        //设置离开动画的样式 如果使用 animate.css 需先添加默认样式 animated--&gt;
-        &lt;v-head&gt;&lt;/v-head&gt;
-    &lt;/transiton&gt;
-&lt;/div&gt;</code></pre>
-<p>唯一组件</p>
-<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
-    &lt;button @click=&quot;isshow=&#39;v-a&#39;&quot;&gt;AAA组件&lt;/button&gt;
-    &lt;button @click=&quot;isshow=&#39;v-b&#39;&quot;&gt;BBB组件&lt;/button&gt;
-    &lt;transition 
-    enter-active-class=&quot;animated bounceIn&quot; 
-    leave-active-class=&quot;animated hinge&quot; 
-    :duration=&quot;{enter:3000,leave:5000}&quot;&gt; /* 设置组件的进入离开的样式 */
-        &lt;component :is=&quot;isshow&quot;&gt;&lt;/component&gt; 
-        /* Vue 自带的组件动画标签 component 一次只能有一个组件在当前标签中 根据 is 绑定组件名称*/
-    &lt;/transition&gt;
-&lt;/div&gt;
-&lt;template id=&#39;a&#39;&gt;
-    &lt;div&gt;
-        &lt;h2&gt;AAAAAAAAA组件&lt;/h2&gt;
-    &lt;/div&gt;
-&lt;/template&gt;
-&lt;template id=&#39;b&#39;&gt;
-    &lt;div&gt;
-        &lt;h2&gt;BBBBBBBBB组件&lt;/h2&gt;
-    &lt;/div&gt;
-&lt;/template&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-    new Vue({
-        el: &#39;#app&#39;,
-        data: {
-            isshow: &#39;v-a&#39;
-        },
-        components:{
-            &#39;v-a&#39;:{
-                template:&#39;#a&#39;
-            },
-            &#39;v-b&#39;:{
-                template:&#39;#b&#39;
-            }
-        }
-    })
-&lt;/script&gt;</code></pre>
-<p>多个标签执行动画</p>
-<pre><code class="html">&lt;transition-group 
-enter-active-class=&quot;animated bounceIn&quot; 
-leave-active-class=&quot;animated hinge&quot; 
-:duration=&quot;{enter:3000,leave:5000}&quot;&gt;
-    &lt;h3 v-if=&quot;flag&quot; key=&#39;1&#39;&gt;动画Yo.~&lt;/h3&gt;
-    &lt;h3 v-if=&quot;flag&quot; key=&#39;2&#39;&gt;动画Yo.~&lt;/h3&gt;
-&lt;/transition-group&gt;
-&lt;!-- 多个标签执行动画 需要使用 transition-group 标签 
-并且内部执行动画的标签需要绑定区分唯一的 key 值 --&gt;</code></pre>
-
+        <h2 id="很抱歉，您所访问的地址并不存在"><a href="#很抱歉，您所访问的地址并不存在" class="headerlink" title="很抱歉，您所访问的地址并不存在"></a>很抱歉，您所访问的地址并不存在</h2>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -445,18 +366,6 @@ leave-active-class=&quot;animated hinge&quot;
     <a href="javascript:void(0)" target="_blank" rel="noopener" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
-
-<div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Vue动画</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">539</span></p>
-    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" target="_blank" rel="noopener" title="小学徒">小学徒</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-11-06, 14:02:06</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-06, 15:08:24</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/06/Vue%E5%8A%A8%E7%94%BB/" title="Vue动画">http://yoursite.com/2019/11/06/Vue%E5%8A%A8%E7%94%BB/</a>
-    <p>
-        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-    </p>
-</div>
 
 
 
