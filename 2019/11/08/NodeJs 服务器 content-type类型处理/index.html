@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>学术渊</title>
+  <title>NodeJs 服务器 content-type类型处理 | 学术渊</title>
   <meta name="keywords" content="">
-  <meta name="description" content="学术渊">
+  <meta name="description" content="NodeJs 服务器 content-type类型处理 | 学术渊">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -48,7 +48,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -349,12 +349,51 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-NodeJs 服务器 content-type类型处理" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#学术渊"><span class="toc-text">学术渊</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一个坠落代码深渊边缘作死的前端小学徒"><span class="toc-text">一个坠落代码深渊边缘作死的前端小学徒</span></a></li></ol></li></ol>
+        <h1 class="article-title">NodeJs 服务器 content-type类型处理</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" target="_blank" data-rel="Node noopener">Node</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-11-08 16:54:24'>2019-11-08 16:54</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:269</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是-quot-quot-，Windows系统是-quot-quot-。"><span class="toc-text">用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是&quot;/&quot;，Windows系统是&quot;\&quot;。</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#返回路径中文件的后缀名，即路径中最后一个’-‘之后的部分。如果一个路径中并不包含’-‘或该路径只包含一个’-‘-且这个’-‘为路径的第一个字符，则此命令返回空字符串。"><span class="toc-text">返回路径中文件的后缀名，即路径中最后一个’.‘之后的部分。如果一个路径中并不包含’.‘或该路径只包含一个’.‘ 且这个’.‘为路径的第一个字符，则此命令返回空字符串。</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#fs-exists-判断文件是否存在"><span class="toc-text">fs.exists() 判断文件是否存在</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#nodejs服务器-content-type类型"><span class="toc-text">nodejs服务器 content-type类型</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -367,23 +406,61 @@
     }
 </style>
 </div>
-            <h3 id="学术渊"><a href="#学术渊" class="headerlink" title="学术渊"></a>学术渊</h3><h4 id="一个坠落代码深渊边缘作死的前端小学徒"><a href="#一个坠落代码深渊边缘作死的前端小学徒" class="headerlink" title="一个坠落代码深渊边缘作死的前端小学徒"></a>一个坠落代码深渊边缘作死的前端小学徒</h4><p><strong>学术渊</strong> 是本人的个人网站。</p>
-<ul>
-<li>前端</li>
-<li>数据库</li>
-<li>Nodejs</li>
-<li>努力学习</li>
-</ul>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>path.join([path1][, path2][, ...])</code></p>
+<h6 id="用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是-quot-quot-，Windows系统是-quot-quot-。"><a href="#用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是-quot-quot-，Windows系统是-quot-quot-。" class="headerlink" title="用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是&quot;/&quot;，Windows系统是&quot;\&quot;。"></a>用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是<code>&quot;/&quot;</code>，Windows系统是<code>&quot;\&quot;</code>。</h6><p><code>path.extname(p)</code></p>
+<h6 id="返回路径中文件的后缀名，即路径中最后一个’-‘之后的部分。如果一个路径中并不包含’-‘或该路径只包含一个’-‘-且这个’-‘为路径的第一个字符，则此命令返回空字符串。"><a href="#返回路径中文件的后缀名，即路径中最后一个’-‘之后的部分。如果一个路径中并不包含’-‘或该路径只包含一个’-‘-且这个’-‘为路径的第一个字符，则此命令返回空字符串。" class="headerlink" title="返回路径中文件的后缀名，即路径中最后一个’.‘之后的部分。如果一个路径中并不包含’.‘或该路径只包含一个’.‘ 且这个’.‘为路径的第一个字符，则此命令返回空字符串。"></a>返回路径中文件的后缀名，即路径中最后一个’<code>.</code>‘之后的部分。如果一个路径中并不包含’<code>.</code>‘或该路径只包含一个’<code>.</code>‘ 且这个’<code>.</code>‘为路径的第一个字符，则此命令返回空字符串。</h6><h6 id="fs-exists-判断文件是否存在"><a href="#fs-exists-判断文件是否存在" class="headerlink" title="fs.exists() 判断文件是否存在"></a>fs.exists() 判断文件是否存在</h6><h6 id="nodejs服务器-content-type类型"><a href="#nodejs服务器-content-type类型" class="headerlink" title="nodejs服务器 content-type类型"></a>nodejs服务器 content-type类型</h6><pre><code>  &quot;css&quot;: &quot;text/css&quot;,
+  &quot;gif&quot;: &quot;image/gif&quot;,
+  &quot;html&quot;: &quot;text/html&quot;,
+  &quot;ico&quot;: &quot;image/x-icon&quot;,
+  &quot;jpeg&quot;: &quot;image/jpeg&quot;,
+  &quot;jpg&quot;: &quot;image/jpeg&quot;,
+  &quot;js&quot;: &quot;text/javascript&quot;,
+  &quot;json&quot;: &quot;application/json&quot;,
+  &quot;pdf&quot;: &quot;application/pdf&quot;,
+  &quot;png&quot;: &quot;image/png&quot;,
+  &quot;svg&quot;: &quot;image/svg+xml&quot;,
+  &quot;swf&quot;: &quot;application/x-shockwave-flash&quot;,
+  &quot;tiff&quot;: &quot;image/tiff&quot;,
+  &quot;txt&quot;: &quot;text/plain&quot;,
+  &quot;wav&quot;: &quot;audio/x-wav&quot;,
+  &quot;wma&quot;: &quot;audio/x-ms-wma&quot;,
+  &quot;wmv&quot;: &quot;video/x-ms-wmv&quot;,
+  &quot;xml&quot;: &quot;text/xml&quot;</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1512034032@qq.com </span>
+    </div>
+</article>
 
-        </article>
-        
-        <p>
-            <a class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+
+<p>
+    <a" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>NodeJs 服务器 content-type类型处理</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">269</span></p>
+    <p><span class="copy-title">本文作者:</span><a title="小学徒">小学徒</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-11-08, 16:54:34</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-08, 16:54:24</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/08/NodeJs%20%E6%9C%8D%E5%8A%A1%E5%99%A8%20content-type%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86/" title="NodeJs 服务器 content-type类型处理">http://yoursite.com/2019/11/08/NodeJs%20%E6%9C%8D%E5%8A%A1%E5%99%A8%20content-type%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 小学徒</p>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>学术渊</title>
+  <title>express | 学术渊</title>
   <meta name="keywords" content="">
-  <meta name="description" content="学术渊">
+  <meta name="description" content="express | 学术渊">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -48,7 +48,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -349,12 +349,51 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-express" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#学术渊"><span class="toc-text">学术渊</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一个坠落代码深渊边缘作死的前端小学徒"><span class="toc-text">一个坠落代码深渊边缘作死的前端小学徒</span></a></li></ol></li></ol>
+        <h1 class="article-title">express</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" target="_blank" data-rel="Node noopener">Node</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-11-08 20:46:26'>2019-11-06 14:02</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:440</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Package-json依赖解释"><span class="toc-text">Package.json依赖解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口设计"><span class="toc-text">接口设计</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#设计方式"><span class="toc-text">设计方式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用方式"><span class="toc-text">使用方式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#过滤信息"><span class="toc-text">过滤信息</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssr"><span class="toc-text">ssr</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -367,23 +406,56 @@
     }
 </style>
 </div>
-            <h3 id="学术渊"><a href="#学术渊" class="headerlink" title="学术渊"></a>学术渊</h3><h4 id="一个坠落代码深渊边缘作死的前端小学徒"><a href="#一个坠落代码深渊边缘作死的前端小学徒" class="headerlink" title="一个坠落代码深渊边缘作死的前端小学徒"></a>一个坠落代码深渊边缘作死的前端小学徒</h4><p><strong>学术渊</strong> 是本人的个人网站。</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>全局安装环境 npm install express –g<br>测试安装成功与否  express –h(省略)<br>安装npm install express-generator –g<br>脚手架创建项目 express  -e  project_name（项目名字）<br>安装package.json中的依赖，进入目录cd express，安装依赖npm I<br>启动npm start  浏览器输入localhost:3000 查看</p>
 <ul>
-<li>前端</li>
-<li>数据库</li>
-<li>Nodejs</li>
-<li>努力学习</li>
+<li>express 插件<ul>
+<li><code>cosr</code> 全局开启跨域权限</li>
+<li><code>express-session</code> 服务器端 session 储存</li>
+<li><code>jsonwebtoken</code> 生成 token</li>
 </ul>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+</li>
+</ul>
+<h3 id="Package-json依赖解释"><a href="#Package-json依赖解释" class="headerlink" title="Package.json依赖解释"></a>Package.json依赖解释</h3><p>body-parser 对http请求体进行解析<br>cookie-parser 对cookie进行解析的<br>debug 输出debug信息<br>ejs javascript模板引擎<br>morgan 在控制台上显示request url 信息<br>serve-favicon: 解决默认请求favicon.ico问题</p>
+<h3 id="接口设计"><a href="#接口设计" class="headerlink" title="接口设计"></a>接口设计</h3><h5 id="设计方式"><a href="#设计方式" class="headerlink" title="设计方式"></a>设计方式</h5><p>HEAD（SELECT）只获取某个资源的头部信息<br>GET（SELECT）获取资源<br>POST（CREATE）创建资源<br>PATCH（UPDATE）更新资源的部分属性（很少用，一般用POST代替）<br>PUT（UPDATE）更新资源，客户端需要提供新建资源的所有属性<br>DELETE（DELETE）删除资源</p>
+<h5 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h5><p>GET <a href="http://www.xxxx.com/api/user" target="_blank" rel="noopener">http://www.xxxx.com/api/user</a> # 获取列表<br>POST <a href="http://www.xxxx.com/api/user" target="_blank" rel="noopener">http://www.xxxx.com/api/user</a> # 创建用户<br>PUT <a href="http://www.xxxx.com/api/user/{id}" target="_blank" rel="noopener">http://www.xxxx.com/api/user/{id}</a> # 修改用户信息<br>DELETE <a href="http://www.xxxx.com/api/user/{id}" target="_blank" rel="noopener">http://www.xxxx.com/api/user/{id}</a> # 删除用户信息</p>
+<h5 id="过滤信息"><a href="#过滤信息" class="headerlink" title="过滤信息"></a>过滤信息</h5><p>用于补充规范一些通用字段<br>?limit=10 # 指定返回记录的数量<br>?offset=10 # 指定返回记录的开始位置<br>?page=2&amp;per_page=100 # 指定第几页，以及每页的记录数<br>?sortby=name&amp;order=asc # 指定返回结果按照哪个属性排序，以及排序顺序<br>?state=close # 指定筛选条件</p>
+<h3 id="ssr"><a href="#ssr" class="headerlink" title="ssr"></a>ssr</h3><p>npm install -g ssr  全局环境安装一次<br>ssr # 默认 端口 1987 访问地址：=&gt; <a href="http://localhost:1987" target="_blank" rel="noopener">http://localhost:1987</a><br>ssr -p 2015 # 端口设置 2015 访问地址：=&gt; <a href="http://localhost:2015" target="_blank" rel="noopener">http://localhost:2015</a><br>ssr -cp 2015 #端口设置 2015 并且 可以跨域访问</p>
 
-        </article>
-        
-        <p>
-            <a class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1512034032@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>express</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">440</span></p>
+    <p><span class="copy-title">本文作者:</span><a title="小学徒">小学徒</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-11-06, 14:02:06</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-08, 20:46:26</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/06/express/" title="express">http://yoursite.com/2019/11/06/express/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 小学徒</p>
