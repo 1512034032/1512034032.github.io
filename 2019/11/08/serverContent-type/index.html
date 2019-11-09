@@ -2,18 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>解决跨域问题 | 学术渊</title>
+  <title>NodeJs 服务器 content-type类型处理 | 学术渊</title>
   <meta name="keywords" content="">
-  <meta name="description" content="解决跨域问题 | 学术渊">
+  <meta name="description" content="NodeJs 服务器 content-type类型处理 | 学术渊">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:type" content="website">
-<meta property="og:title" content="404">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;404.html">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http:&#x2F;&#x2F;1512034032.github.io&#x2F;about&#x2F;index.html">
 <meta property="og:site_name" content="学术渊">
-<meta property="og:description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-07T03:15:57.684Z">
+<meta property="og:updated_time" content="2019-11-06T06:54:02.901Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -246,7 +244,7 @@
         </a>
         
         <a  class="Node "
-           href="/2019/11/08/NodeJs%20%E6%9C%8D%E5%8A%A1%E5%99%A8%20content-type%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86/"
+           href="/2019/11/08/serverContent-type/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="NodeJs 服务器 content-type类型处理">NodeJs 服务器 content-type类型处理</span>
@@ -254,7 +252,7 @@
         </a>
         
         <a  class="Node "
-           href="/2019/11/08/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"
+           href="/2019/11/08/CrossDomainIssues/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="解决跨域问题">解决跨域问题</span>
@@ -302,7 +300,7 @@
         </a>
         
         <a  class="Vue "
-           href="/2019/11/06/Vue%E5%8A%A8%E7%94%BB/"
+           href="/2019/11/06/VueAnimation/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="Vue动画">Vue动画</span>
@@ -353,9 +351,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-跨域问题解决" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-serverContent-type" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">解决跨域问题</h1>
+        <h1 class="article-title">NodeJs 服务器 content-type类型处理</h1>
     
     <div class="article-meta">
         
@@ -371,12 +369,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-08 20:16:57'>2019-11-08 16:51</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-08 16:54:24'>2019-11-08 16:54</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:323</span>
+        <span>字数:269</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -395,7 +393,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-让后台开启权限"><span class="toc-text">1.让后台开启权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-使用-nodejs-作为中间件设置代理服务器解决"><span class="toc-text">2.使用 nodejs 作为中间件设置代理服务器解决</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是-quot-quot-，Windows系统是-quot-quot-。"><span class="toc-text">用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是&quot;/&quot;，Windows系统是&quot;\&quot;。</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#返回路径中文件的后缀名，即路径中最后一个’-‘之后的部分。如果一个路径中并不包含’-‘或该路径只包含一个’-‘-且这个’-‘为路径的第一个字符，则此命令返回空字符串。"><span class="toc-text">返回路径中文件的后缀名，即路径中最后一个’.‘之后的部分。如果一个路径中并不包含’.‘或该路径只包含一个’.‘ 且这个’.‘为路径的第一个字符，则此命令返回空字符串。</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#fs-exists-判断文件是否存在"><span class="toc-text">fs.exists() 判断文件是否存在</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#nodejs服务器-content-type类型"><span class="toc-text">nodejs服务器 content-type类型</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -411,34 +409,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-让后台开启权限"><a href="#1-让后台开启权限" class="headerlink" title="1.让后台开启权限"></a>1.让后台开启权限</h3><pre><code>res.setHeader(&#39;Access-Control-Allow-Origin&#39;,&#39;*&#39;)
-</code></pre><h3 id="2-使用-nodejs-作为中间件设置代理服务器解决"><a href="#2-使用-nodejs-作为中间件设置代理服务器解决" class="headerlink" title="2.使用 nodejs 作为中间件设置代理服务器解决"></a>2.使用 nodejs 作为中间件设置代理服务器解决</h3><pre><code>var express = require(&#39;express&#39;);
-var proxy = require(&#39;http-proxy-middleware&#39;);
-
-var app = express();
-
-app.use(&#39;/api&#39;, proxy({target: &#39;http://10.119.168.87:4000&#39;, changeOrigin: true}));
-app.listen(3000);</code></pre><p>http-proxy-middleware用于后台将请求转发给其它服务器。</p>
-<pre><code>例如：我们当前主机A为http://localhost:3000/，现在浏览器发送一个请求，请求接口/api，
-这个请求的数据在另外一台服务器B上（http://10.119.168.87:4000），
-这时，就可通过在A主机设置代理，直接将请求发送给B主机。
-
-简单实现代码如下
-var proxy = require(&#39;http-proxy-middleware&#39;);
-
-var apiProxy = proxy(&#39;/api&#39;, {target: &#39;http://www.example.org&#39;});
-//                   \____/   \_____________________________/
-//                     |                    |
-//                需要转发的请求           目标服务器
-
-说明：我们利用express在3000端口启动了一个小型的服务器，
-利用了app.use(&#39;/api&#39;, proxy({target: &#39;http://10.119.168.87:4000/&#39;, changeOrigin: true}))这句话，
-使发到3000端口的/api请求转发到了4000端口。
-即请求http://localhost:3000/api相当于请求http://10.119.168.87:4000/api。</code></pre><p>下边是一个完整地址划分：</p>
-<pre><code>foo://example.com:8042/over/there?name=ferret#nose
- \_/  \______________/\_________/ \_________/ \__/
-  |           |            |            |       |
-协议          主机         路径          查询     碎片</code></pre>
+        <p><code>path.join([path1][, path2][, ...])</code></p>
+<h6 id="用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是-quot-quot-，Windows系统是-quot-quot-。"><a href="#用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是-quot-quot-，Windows系统是-quot-quot-。" class="headerlink" title="用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是&quot;/&quot;，Windows系统是&quot;\&quot;。"></a>用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是<code>&quot;/&quot;</code>，Windows系统是<code>&quot;\&quot;</code>。</h6><p><code>path.extname(p)</code></p>
+<h6 id="返回路径中文件的后缀名，即路径中最后一个’-‘之后的部分。如果一个路径中并不包含’-‘或该路径只包含一个’-‘-且这个’-‘为路径的第一个字符，则此命令返回空字符串。"><a href="#返回路径中文件的后缀名，即路径中最后一个’-‘之后的部分。如果一个路径中并不包含’-‘或该路径只包含一个’-‘-且这个’-‘为路径的第一个字符，则此命令返回空字符串。" class="headerlink" title="返回路径中文件的后缀名，即路径中最后一个’.‘之后的部分。如果一个路径中并不包含’.‘或该路径只包含一个’.‘ 且这个’.‘为路径的第一个字符，则此命令返回空字符串。"></a>返回路径中文件的后缀名，即路径中最后一个’<code>.</code>‘之后的部分。如果一个路径中并不包含’<code>.</code>‘或该路径只包含一个’<code>.</code>‘ 且这个’<code>.</code>‘为路径的第一个字符，则此命令返回空字符串。</h6><h6 id="fs-exists-判断文件是否存在"><a href="#fs-exists-判断文件是否存在" class="headerlink" title="fs.exists() 判断文件是否存在"></a>fs.exists() 判断文件是否存在</h6><h6 id="nodejs服务器-content-type类型"><a href="#nodejs服务器-content-type类型" class="headerlink" title="nodejs服务器 content-type类型"></a>nodejs服务器 content-type类型</h6><pre><code>  &quot;css&quot;: &quot;text/css&quot;,
+  &quot;gif&quot;: &quot;image/gif&quot;,
+  &quot;html&quot;: &quot;text/html&quot;,
+  &quot;ico&quot;: &quot;image/x-icon&quot;,
+  &quot;jpeg&quot;: &quot;image/jpeg&quot;,
+  &quot;jpg&quot;: &quot;image/jpeg&quot;,
+  &quot;js&quot;: &quot;text/javascript&quot;,
+  &quot;json&quot;: &quot;application/json&quot;,
+  &quot;pdf&quot;: &quot;application/pdf&quot;,
+  &quot;png&quot;: &quot;image/png&quot;,
+  &quot;svg&quot;: &quot;image/svg+xml&quot;,
+  &quot;swf&quot;: &quot;application/x-shockwave-flash&quot;,
+  &quot;tiff&quot;: &quot;image/tiff&quot;,
+  &quot;txt&quot;: &quot;text/plain&quot;,
+  &quot;wav&quot;: &quot;audio/x-wav&quot;,
+  &quot;wma&quot;: &quot;audio/x-ms-wma&quot;,
+  &quot;wmv&quot;: &quot;video/x-ms-wmv&quot;,
+  &quot;xml&quot;: &quot;text/xml&quot;</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1512034032@qq.com </span>
     </div>
@@ -451,12 +441,12 @@ var apiProxy = proxy(&#39;/api&#39;, {target: &#39;http://www.example.org&#39;})
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>解决跨域问题</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">323</span></p>
+    <p><span class="copy-title">文章标题:</span>NodeJs 服务器 content-type类型处理</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">269</span></p>
     <p><span class="copy-title">本文作者:</span><a title="小学徒">小学徒</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-11-08, 16:51:53</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-08, 20:16:57</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/08/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="解决跨域问题">http://yoursite.com/2019/11/08/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-08, 16:54:34</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-08, 16:54:24</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/08/serverContent-type/" title="NodeJs 服务器 content-type类型处理">http://1512034032.github.io/2019/11/08/serverContent-type/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

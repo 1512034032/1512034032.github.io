@@ -2,18 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>NodeJs 服务器 content-type类型处理 | 学术渊</title>
+  <title>Vue动画 | 学术渊</title>
   <meta name="keywords" content="">
-  <meta name="description" content="NodeJs 服务器 content-type类型处理 | 学术渊">
+  <meta name="description" content="Vue动画 | 学术渊">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:type" content="website">
-<meta property="og:title" content="404">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;404.html">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http:&#x2F;&#x2F;1512034032.github.io&#x2F;about&#x2F;index.html">
 <meta property="og:site_name" content="学术渊">
-<meta property="og:description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-07T03:15:57.684Z">
+<meta property="og:updated_time" content="2019-11-06T06:54:02.901Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -246,7 +244,7 @@
         </a>
         
         <a  class="Node "
-           href="/2019/11/08/NodeJs%20%E6%9C%8D%E5%8A%A1%E5%99%A8%20content-type%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86/"
+           href="/2019/11/08/serverContent-type/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="NodeJs 服务器 content-type类型处理">NodeJs 服务器 content-type类型处理</span>
@@ -254,7 +252,7 @@
         </a>
         
         <a  class="Node "
-           href="/2019/11/08/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"
+           href="/2019/11/08/CrossDomainIssues/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="解决跨域问题">解决跨域问题</span>
@@ -302,7 +300,7 @@
         </a>
         
         <a  class="Vue "
-           href="/2019/11/06/Vue%E5%8A%A8%E7%94%BB/"
+           href="/2019/11/06/VueAnimation/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="Vue动画">Vue动画</span>
@@ -353,9 +351,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-NodeJs 服务器 content-type类型处理" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-VueAnimation" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">NodeJs 服务器 content-type类型处理</h1>
+        <h1 class="article-title">Vue动画</h1>
     
     <div class="article-meta">
         
@@ -363,7 +361,7 @@
         
         <span class="book">
             
-                <a href="javascript:" target="_blank" data-rel="Node noopener">Node</a>
+                <a href="javascript:" target="_blank" data-rel="Vue noopener">Vue</a>
             
         </span>
         
@@ -371,12 +369,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-08 16:54:24'>2019-11-08 16:54</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-08 20:44:33'>2019-11-06 14:02</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:269</span>
+        <span>字数:536</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -395,7 +393,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是-quot-quot-，Windows系统是-quot-quot-。"><span class="toc-text">用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是&quot;/&quot;，Windows系统是&quot;\&quot;。</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#返回路径中文件的后缀名，即路径中最后一个’-‘之后的部分。如果一个路径中并不包含’-‘或该路径只包含一个’-‘-且这个’-‘为路径的第一个字符，则此命令返回空字符串。"><span class="toc-text">返回路径中文件的后缀名，即路径中最后一个’.‘之后的部分。如果一个路径中并不包含’.‘或该路径只包含一个’.‘ 且这个’.‘为路径的第一个字符，则此命令返回空字符串。</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#fs-exists-判断文件是否存在"><span class="toc-text">fs.exists() 判断文件是否存在</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#nodejs服务器-content-type类型"><span class="toc-text">nodejs服务器 content-type类型</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -411,26 +409,80 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><code>path.join([path1][, path2][, ...])</code></p>
-<h6 id="用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是-quot-quot-，Windows系统是-quot-quot-。"><a href="#用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是-quot-quot-，Windows系统是-quot-quot-。" class="headerlink" title="用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是&quot;/&quot;，Windows系统是&quot;\&quot;。"></a>用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是<code>&quot;/&quot;</code>，Windows系统是<code>&quot;\&quot;</code>。</h6><p><code>path.extname(p)</code></p>
-<h6 id="返回路径中文件的后缀名，即路径中最后一个’-‘之后的部分。如果一个路径中并不包含’-‘或该路径只包含一个’-‘-且这个’-‘为路径的第一个字符，则此命令返回空字符串。"><a href="#返回路径中文件的后缀名，即路径中最后一个’-‘之后的部分。如果一个路径中并不包含’-‘或该路径只包含一个’-‘-且这个’-‘为路径的第一个字符，则此命令返回空字符串。" class="headerlink" title="返回路径中文件的后缀名，即路径中最后一个’.‘之后的部分。如果一个路径中并不包含’.‘或该路径只包含一个’.‘ 且这个’.‘为路径的第一个字符，则此命令返回空字符串。"></a>返回路径中文件的后缀名，即路径中最后一个’<code>.</code>‘之后的部分。如果一个路径中并不包含’<code>.</code>‘或该路径只包含一个’<code>.</code>‘ 且这个’<code>.</code>‘为路径的第一个字符，则此命令返回空字符串。</h6><h6 id="fs-exists-判断文件是否存在"><a href="#fs-exists-判断文件是否存在" class="headerlink" title="fs.exists() 判断文件是否存在"></a>fs.exists() 判断文件是否存在</h6><h6 id="nodejs服务器-content-type类型"><a href="#nodejs服务器-content-type类型" class="headerlink" title="nodejs服务器 content-type类型"></a>nodejs服务器 content-type类型</h6><pre><code>  &quot;css&quot;: &quot;text/css&quot;,
-  &quot;gif&quot;: &quot;image/gif&quot;,
-  &quot;html&quot;: &quot;text/html&quot;,
-  &quot;ico&quot;: &quot;image/x-icon&quot;,
-  &quot;jpeg&quot;: &quot;image/jpeg&quot;,
-  &quot;jpg&quot;: &quot;image/jpeg&quot;,
-  &quot;js&quot;: &quot;text/javascript&quot;,
-  &quot;json&quot;: &quot;application/json&quot;,
-  &quot;pdf&quot;: &quot;application/pdf&quot;,
-  &quot;png&quot;: &quot;image/png&quot;,
-  &quot;svg&quot;: &quot;image/svg+xml&quot;,
-  &quot;swf&quot;: &quot;application/x-shockwave-flash&quot;,
-  &quot;tiff&quot;: &quot;image/tiff&quot;,
-  &quot;txt&quot;: &quot;text/plain&quot;,
-  &quot;wav&quot;: &quot;audio/x-wav&quot;,
-  &quot;wma&quot;: &quot;audio/x-ms-wma&quot;,
-  &quot;wmv&quot;: &quot;video/x-ms-wmv&quot;,
-  &quot;xml&quot;: &quot;text/xml&quot;</code></pre>
+        <p><img src="./transition.png" alt=""></p>
+<pre><code class="html">&lt;style type=&quot;text/css&quot;&gt;
+    .v-enter, // 开始进入动画的状态
+    .v-leave-to{ // 结束动画时的状态
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    .v-enter-active, // 进入动画的开始状态到结束状态
+    .v-leave-active{ // 离开动画的开始状态到结束状态
+        transition: all 1s ease;
+    }
+&lt;/style&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;transition&gt; // Vue 动画写在 transition 标签中
+        &lt;h3&gt;ww&lt;/h3&gt;
+    &lt;/transition&gt;
+&lt;/div&gt;</code></pre>
+<p>简写</p>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+    &lt;transiton enter-active-class=&quot;animated&quot; leave-active-class=&quot;&quot; :duration=&quot;{enter:3000,leave:5000}&gt;
+    &lt;!-- //设置进入动画的样式 如果使用 animate.css 需先添加默认样式 animated 
+        //设置离开动画的样式 如果使用 animate.css 需先添加默认样式 animated--&gt;
+        &lt;v-head&gt;&lt;/v-head&gt;
+    &lt;/transiton&gt;
+&lt;/div&gt;</code></pre>
+<p>唯一组件</p>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+    &lt;button @click=&quot;isshow=&#39;v-a&#39;&quot;&gt;AAA组件&lt;/button&gt;
+    &lt;button @click=&quot;isshow=&#39;v-b&#39;&quot;&gt;BBB组件&lt;/button&gt;
+    &lt;transition 
+    enter-active-class=&quot;animated bounceIn&quot; 
+    leave-active-class=&quot;animated hinge&quot; 
+    :duration=&quot;{enter:3000,leave:5000}&quot;&gt; /* 设置组件的进入离开的样式 */
+        &lt;component :is=&quot;isshow&quot;&gt;&lt;/component&gt; 
+        /* Vue 自带的组件动画标签 component 一次只能有一个组件在当前标签中 根据 is 绑定组件名称*/
+    &lt;/transition&gt;
+&lt;/div&gt;
+&lt;template id=&#39;a&#39;&gt;
+    &lt;div&gt;
+        &lt;h2&gt;AAAAAAAAA组件&lt;/h2&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;template id=&#39;b&#39;&gt;
+    &lt;div&gt;
+        &lt;h2&gt;BBBBBBBBB组件&lt;/h2&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    new Vue({
+        el: &#39;#app&#39;,
+        data: {
+            isshow: &#39;v-a&#39;
+        },
+        components:{
+            &#39;v-a&#39;:{
+                template:&#39;#a&#39;
+            },
+            &#39;v-b&#39;:{
+                template:&#39;#b&#39;
+            }
+        }
+    })
+&lt;/script&gt;</code></pre>
+<p>多个标签执行动画</p>
+<pre><code class="html">&lt;transition-group 
+enter-active-class=&quot;animated bounceIn&quot; 
+leave-active-class=&quot;animated hinge&quot; 
+:duration=&quot;{enter:3000,leave:5000}&quot;&gt;
+    &lt;h3 v-if=&quot;flag&quot; key=&#39;1&#39;&gt;动画Yo.~&lt;/h3&gt;
+    &lt;h3 v-if=&quot;flag&quot; key=&#39;2&#39;&gt;动画Yo.~&lt;/h3&gt;
+&lt;/transition-group&gt;
+&lt;!-- 多个标签执行动画 需要使用 transition-group 标签 
+并且内部执行动画的标签需要绑定区分唯一的 key 值 --&gt;</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1512034032@qq.com </span>
     </div>
@@ -443,12 +495,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>NodeJs 服务器 content-type类型处理</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">269</span></p>
+    <p><span class="copy-title">文章标题:</span>Vue动画</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">536</span></p>
     <p><span class="copy-title">本文作者:</span><a title="小学徒">小学徒</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-11-08, 16:54:34</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-08, 16:54:24</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/08/NodeJs%20%E6%9C%8D%E5%8A%A1%E5%99%A8%20content-type%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86/" title="NodeJs 服务器 content-type类型处理">http://yoursite.com/2019/11/08/NodeJs%20%E6%9C%8D%E5%8A%A1%E5%99%A8%20content-type%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-06, 14:02:06</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-08, 20:44:33</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/06/VueAnimation/" title="Vue动画">http://1512034032.github.io/2019/11/06/VueAnimation/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
