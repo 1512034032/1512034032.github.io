@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | 学术渊</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="about | 学术渊">
+  <title>字符串 | 学术渊</title>
+  <meta name="keywords" content=" Js ">
+  <meta name="description" content="字符串 | 学术渊">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:type" content="website">
@@ -441,24 +441,38 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-string" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">字符串</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" target="_blank" data-rel="前端 noopener">前端</a>/
+            
+                <a href="javascript:" target="_blank" data-rel="Js noopener">Js</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" target="_blank" rel="noopener" class="color3">Js</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-06 14:54:02'>2019-11-06 14:54</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-11 09:28:53'>2019-11-11 09:43</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:1.6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -477,7 +491,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#字符串的创建"><span class="toc-text">字符串的创建</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串方法"><span class="toc-text">字符串方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#charAt下标"><span class="toc-text">charAt下标</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#slice复制1"><span class="toc-text">slice复制1</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#substring复制2"><span class="toc-text">substring复制2</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#substr复制3"><span class="toc-text">substr复制3</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#indexOf-lastIndexOf查找下标"><span class="toc-text">indexOf,lastIndexOf查找下标</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#trim去除空格"><span class="toc-text">trim去除空格</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#toLowerCase-toUpperCase大小写"><span class="toc-text">toLowerCase,toUpperCase大小写</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#replace替换"><span class="toc-text">replace替换</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#split分割"><span class="toc-text">split分割</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#ASCII码"><span class="toc-text">ASCII码</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -493,7 +507,114 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>字符串：</p>
+<pre><code>//创建 属性 方法:
+            //字面量
+            var username = &#39;zhangsan&#39;
+            //es6 模板字符串  中间可以使用${变量}
+            let str = `
+            afa
+            asdfa
+            姓名是${username},年龄是${age}
+            `;
+            //字符串对象  包装对象 像数组  伪数组
+            let str2 = new String(&#39;aadsd&#39;)
+//方法:
+            charAt//下标
+            slice//复制(取出)
+            substring//复制(取出)
+            substr//复制(取出)
+            indexOf,lastIndexOf//查找下标
+            trim//去除空格
+            toLowerCase//大小写
+            replace//替换
+            split//分割</code></pre><h6 id="字符串的创建"><a href="#字符串的创建" class="headerlink" title="字符串的创建"></a>字符串的创建</h6><pre><code class="js">字符串的创建方式
+
+var s1 = &#39;abc&#39;;
+var s2 = new String(&#39;abc&#39;);
+typeof s1 // &quot;string&quot;
+typeof s2 // &quot;object&quot;
+所以,String对象也叫包装对象
+除了用作构造函数，String对象还可以当作工具方法使用，将任意类型的值转为字符串。
+String(true) // &quot;true&quot;
+String(5) // &quot;5&quot;
+上面代码将布尔值ture和数值5，分别转换为字符串
+
+var a=&#39;abc&#39;;//字面量字符串
+var b=``;
+
+字符串实例的length属性返回字符串的长度。
+&#39;abc&#39;.length // 3
+
+字符串对象是一个类似数组的对象（很像数组，但不是数组）。
+new String(&#39;abc&#39;)
+// String {0: &quot;a&quot;, 1: &quot;b&quot;, 2: &quot;c&quot;, length: 3}
+(new String(&#39;abc&#39;))[1] // &quot;b&quot;
+上面代码中，字符串abc对应的字符串对象，有数值键（0、1、2）和length属性，所以可以像数组那样取值。</code></pre>
+<h4 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h4><h6 id="charAt下标"><a href="#charAt下标" class="headerlink" title="charAt下标"></a>charAt下标</h6><pre><code class="js">charAt方法返回指定位置的字符，参数是从0开始编号的位置。
+var s = new String(&#39;abc&#39;);
+这个方法完全可以用数组下标替代。
+&#39;abc&#39;.charAt(1) // &quot;b&quot;
+&#39;abc&#39;[1] // &quot;b&quot;</code></pre>
+<h6 id="slice复制1"><a href="#slice复制1" class="headerlink" title="slice复制1"></a>slice复制1</h6><pre><code class="js">slice方法用于从原字符串取出子字符串并返回，不改变原字符串。它的第一个参数是子字符串的开始位置，第二个参数是子字符串的结束位置（不含该位置）。
+&#39;JavaScript&#39;.slice(0, 4) // &quot;Java&quot;
+如果省略第二个参数，则表示子字符串一直到原字符串结束。
+如果参数是负值，表示从结尾开始倒数计算的位置，即该负值加上字符串长度。
+如果第一个参数大于第二个参数，slice方法返回一个空字符串。 </code></pre>
+<h6 id="substring复制2"><a href="#substring复制2" class="headerlink" title="substring复制2"></a>substring复制2</h6><pre><code class="js">substring方法用于从原字符串取出子字符串并返回，不改变原字符串，跟slice方法很相像。它的第一个参数表示子字符串的开始位置，第二个位置表示结束位置（返回结果不含该位置）。
+如果省略第二个参数，则表示子字符串一直到原字符串的结束。
+如果第二个参数大于第一个参数，substring方法会自动更换两个参数的位置。
+&#39;JavaScript&#39;.substring(10, 4) // &quot;Script&quot;
+// 等同于
+&#39;JavaScript&#39;.substring(4, 10) // &quot;Script&quot;</code></pre>
+<h6 id="substr复制3"><a href="#substr复制3" class="headerlink" title="substr复制3"></a>substr复制3</h6><pre><code>substr方法用于从原字符串取出子字符串并返回，不改变原字符串，跟slice和substring方法的作用相同。
+substr方法的第一个参数是子字符串的开始位置（从0开始计算），第二个参数是子字符串的长度。
+如果省略第二个参数，则表示子字符串一直到原字符串的结束。
+&#39;JavaScript&#39;.substr(4) // &quot;Script&quot;
+如果第一个参数是负数，表示倒数计算的字符位置。如果第二个参数是负数，将被自动转为0，因此会返回空字符串。
+&#39;JavaScript&#39;.substr(-6) // &quot;Script&quot;</code></pre><h6 id="indexOf-lastIndexOf查找下标"><a href="#indexOf-lastIndexOf查找下标" class="headerlink" title="indexOf,lastIndexOf查找下标"></a>indexOf,lastIndexOf查找下标</h6><pre><code class="js">indexOf方法用于确定一个字符串在另一个字符串中第一次出现的位置，返回结果是匹配开始的位置。如果返回-1，就表示不匹配。
+&#39;hello world&#39;.indexOf(&#39;o&#39;) // 4
+&#39;JavaScript&#39;.indexOf(&#39;script&#39;) // -1
+indexOf方法还可以接受第二个参数，表示从该位置开始向后匹配。
+&#39;hello world&#39;.indexOf(&#39;o&#39;, 6) // 7
+lastIndexOf方法的用法跟indexOf方法一致，主要的区别是lastIndexOf从尾部开始匹配，indexOf则是从头部开始匹配。
+
+&#39;hello world&#39;.lastIndexOf(&#39;o&#39;) // 7
+另外，lastIndexOf的第二个参数表示从该位置起向前匹配。
+&#39;hello world&#39;.lastIndexOf(&#39;o&#39;, 6) // 4</code></pre>
+<h6 id="trim去除空格"><a href="#trim去除空格" class="headerlink" title="trim去除空格"></a>trim去除空格</h6><pre><code class="js">trim方法用于去除字符串两端的空格，返回一个新字符串，不改变原字符串。
+&#39;  hello world  &#39;.trim()// &quot;hello world&quot;
+该方法去除的不仅是空格，还包括制表符（\t、\v）、换行符（\n）和回车符（\r）。
+&#39;\r\nabc \t&#39;.trim() // &#39;abc&#39;</code></pre>
+<h6 id="toLowerCase-toUpperCase大小写"><a href="#toLowerCase-toUpperCase大小写" class="headerlink" title="toLowerCase,toUpperCase大小写"></a>toLowerCase,toUpperCase大小写</h6><pre><code class="js">toLowerCase方法用于将一个字符串全部转为小写，toUpperCase则是全部转为大写。它们都返回一个新字符串，不改变原字符串。
+&#39;Hello World&#39;.toLowerCase()
+// &quot;hello world&quot;
+&#39;Hello World&#39;.toUpperCase()
+// &quot;HELLO WORLD&quot;</code></pre>
+<h6 id="replace替换"><a href="#replace替换" class="headerlink" title="replace替换"></a>replace替换</h6><pre><code class="js">replace方法用于替换匹配的子字符串，一般情况下只替换第一个匹配（除非使用带有g修饰符的正则表达式）。
+&#39;aaa&#39;.replace(&#39;a&#39;, &#39;b&#39;) // &quot;baa&quot;
+&#39;aaa&#39;.replace(/a/g, &#39;b&#39;) // &quot;bbb&quot;</code></pre>
+<h6 id="split分割"><a href="#split分割" class="headerlink" title="split分割"></a>split分割</h6><pre><code class="js">split方法按照给定规则分割字符串，返回一个由分割出来的子字符串组成的数组。
+&#39;a|b|c&#39;.split(&#39;|&#39;) // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
+如果分割规则为空字符串，则返回数组的成员是原字符串的每一个字符。
+&#39;a|b|c&#39;.split(&#39;&#39;) // [&quot;a&quot;, &quot;|&quot;, &quot;b&quot;, &quot;|&quot;, &quot;c&quot;]
+//注：数组join可将数组转为字符串split，join可互换</code></pre>
+<h6 id="ASCII码"><a href="#ASCII码" class="headerlink" title="ASCII码"></a>ASCII码</h6><pre><code class="js">ASCII码和字符集
+
+字符串常见API(charCodeAt\fromCharCode)
+charCodeAt方法返回字符串指定位置的 Unicode 码点（十进制表示），相当于String.fromCharCode()的逆操作。
+&#39;abc&#39;.charCodeAt(1) // 98
+上面代码中，abc的1号位置的字符是b，它的 Unicode 码点是98。
+String.fromCharCode()
+String对象提供的静态方法（即定义在对象本身，而不是定义在对象实例的方法），主要是String.fromCharCode()。该方法的参数是一个或多个数值，代表 Unicode 码点，返回值是这些码点组成的字符串。
+
+String.fromCharCode() // &quot;&quot;
+String.fromCharCode(97) // &quot;a&quot;
+String.fromCharCode(104, 101, 108, 108, 111)
+// &quot;hello&quot;
+
+统计字符串中每个字符的个数</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1512034032@qq.com </span>
     </div>
@@ -504,6 +625,18 @@
     <a" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>字符串</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.6k</span></p>
+    <p><span class="copy-title">本文作者:</span><a title="小学徒">小学徒</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-11-11, 09:43:27</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-11, 09:28:53</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/11/string/" title="字符串">http://1512034032.github.io/2019/11/11/string/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 

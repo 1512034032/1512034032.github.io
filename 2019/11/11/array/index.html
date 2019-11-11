@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | 学术渊</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="about | 学术渊">
+  <title>数组 | 学术渊</title>
+  <meta name="keywords" content=" Js ">
+  <meta name="description" content="数组 | 学术渊">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:type" content="website">
@@ -441,24 +441,38 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-array" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">数组</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" target="_blank" data-rel="前端 noopener">前端</a>/
+            
+                <a href="javascript:" target="_blank" data-rel="Js noopener">Js</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" target="_blank" rel="noopener" class="color3">Js</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-06 14:54:02'>2019-11-06 14:54</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-11 09:37:32'>2019-11-11 09:43</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:3.4k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -477,7 +491,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-数组的概念"><span class="toc-text">1- 数组的概念</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-构造函数方式创建数组"><span class="toc-text">2- 构造函数方式创建数组</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组的操作"><span class="toc-text">数组的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#push-pop-末增-删"><span class="toc-text">push/pop(末增/删)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#concat合并"><span class="toc-text">concat合并</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#shift-unshift-首增-删"><span class="toc-text">shift/unshift(首增/删)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#slice复制"><span class="toc-text">slice复制</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#splice删除"><span class="toc-text">splice删除</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#reverse-sort颠倒-排序"><span class="toc-text">reverse/sort颠倒/排序</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#join分隔符"><span class="toc-text">join分隔符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ES5数组新增方法"><span class="toc-text">ES5数组新增方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#静态方法isArray"><span class="toc-text">静态方法isArray</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#for-in遍历"><span class="toc-text">for in遍历</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#map方法-遍历"><span class="toc-text">map方法-遍历</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#forEach-遍历"><span class="toc-text">forEach-遍历</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#filter过滤"><span class="toc-text">filter过滤</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#reduce依次处理数组成员"><span class="toc-text">reduce依次处理数组成员</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#indexOf-lastIndexOf"><span class="toc-text">indexOf(),lastIndexOf()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组小总结"><span class="toc-text">数组小总结</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -493,7 +507,273 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h6 id="1-数组的概念"><a href="#1-数组的概念" class="headerlink" title="1- 数组的概念"></a>1- 数组的概念</h6><pre><code class="javascript">数组的概念：
+所谓数组，是有序的元素序列。（一组有序 数据）
+JavaScript的Array可以包含任意数据类型。注：一般来说数组中元素的类型相同
+
+数组的创建方式
+1-字面量
+var arr = [1, 2];//数组中有两个元素
+arr.length ;//获取数组的长度
+arr[i]//获取数组中的第i个元素，i称为数组的下标或者索引，下标从0开始
+arr[0]//获取数组中的第一个元素
+arr[0] = 100;//修改数组中第一个元素的值为100</code></pre>
+<h6 id="2-构造函数方式创建数组"><a href="#2-构造函数方式创建数组" class="headerlink" title="2- 构造函数方式创建数组"></a>2- 构造函数方式创建数组</h6><pre><code class="javascript">Array是一个构造函数，可以用它生成新的数组
+var arr = new Array(2);
+arr.length // 2
+arr[0]//undefined
+上面代码中，Array构造函数的参数2，表示生成一个两个成员的数组。 
+
+Array构造函数有一个很大的缺陷，就是不同的参数，会导致它的行为不一致。
+// 单个非数值（比如字符串、布尔值、对象等）作为参数，
+// 则该参数是返回的新数组的成员
+new Array(&#39;abc&#39;) // [&#39;abc&#39;]
+// 多参数时，所有参数都是返回的新数组的成员
+new Array(1, 2) // [1, 2]
+new Array(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;) // [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+可以看到，Array作为构造函数，行为很不一致。因此，不建议使用它生成新数组，直接使用数组字面量是更好的做法。
+</code></pre>
+<h4 id="数组的操作"><a href="#数组的操作" class="headerlink" title="数组的操作"></a>数组的操作</h4><pre><code class="javascript">数组的操作
+//push/pop/unshift/shift</code></pre>
+<h6 id="push-pop-末增-删"><a href="#push-pop-末增-删" class="headerlink" title="push/pop(末增/删)"></a>push/pop(末增/删)</h6><pre><code class="javascript">push方法用于在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度。注意，该方法会改变原数组
+var arr = [];
+arr.push(1)         // 1
+arr.push(&#39;a&#39;)        // 2
+arr.push(true, {})    // 4
+arr        // [1, &#39;a&#39;, true, {}]
+
+
+
+pop方法用于删除数组的最后一个元素，并返回该元素。注意，该方法会改变原数组。
+var arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+arr.pop() // &#39;c&#39;
+arr // [&#39;a&#39;, &#39;b&#39;]
+对空数组使用pop方法，不会报错，而是返回undefined。
+push和pop结合使用，就构成了“后进先出”的栈结构（stack）。
+var arr = [];
+arr.push(1, 2);
+arr.push(3);//1,2,3
+arr.pop();
+arr // [1, 2]
+上面代码中，3是最后进入数组的，但是最早离开数组。</code></pre>
+<h6 id="concat合并"><a href="#concat合并" class="headerlink" title="concat合并"></a>concat合并</h6><pre><code class="js">concat  合并数组(不改变原数组)
+var arr2=[1,3];
+var arr3=[2,4];
+arr2.concat(arr3);
+//arr2不变，arr3变成1,2,3,4</code></pre>
+<h6 id="shift-unshift-首增-删"><a href="#shift-unshift-首增-删" class="headerlink" title="shift/unshift(首增/删)"></a>shift/unshift(首增/删)</h6><pre><code class="javascript">shift方法用于删除数组的第一个元素，并返回该元素。注意，该方法会改变原数组。
+var a = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+a.shift() // &#39;a&#39;
+a // [&#39;b&#39;, &#39;c&#39;]
+
+
+
+
+push和shift结合使用，就构成了“先进先出”的队列结构（queue）。
+unshift方法用于在数组的第一个位置添加元素，并返回添加新元素后的数组长度。注意，该方法会改变原数组。
+var a = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+a.unshift(&#39;x&#39;); // 4
+a // [&#39;x&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code></pre>
+<h6 id="slice复制"><a href="#slice复制" class="headerlink" title="slice复制"></a>slice复制</h6><pre><code class="javascript">slice方法用于复制目标数组的一部分，返回一个新数组，原数组不变。
+arr.slice(start, end);
+它的第一个参数为起始位置（从0开始），第二个参数为终止位置（但该位置的元素本身不包括在内）。如果省略第二个参数，则一直返回到原数组的最后一个成员。
+
+var a = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+a.slice(0) // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
+a.slice(1) // [&quot;b&quot;, &quot;c&quot;]
+a.slice(1, 2) // [&quot;b&quot;]
+a.slice(2, 6) // [&quot;c&quot;]
+a.slice() // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
+//上面代码中，最后一个例子slice没有参数，实际上等于返回一个原数组的拷贝。
+
+如果slice方法的参数是负数，则表示倒数计算的位置。
+var a = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+a.slice(-2) // [&quot;b&quot;, &quot;c&quot;]
+a.slice(-2, -1) // [&quot;b&quot;]
+//上面代码中，-2表示倒数计算的第二个位置，-1表示倒数计算的第一个位置。
+
+如果第一个参数大于等于数组长度，或者第二个参数小于第一个参数，则返回空数组。
+var a = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+a.slice(4) // []
+a.slice(2, 1) // []
+
+如果slice方法的参数是负数，则表示倒数计算的位置。
+var a = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+a.slice(-2) // [&quot;b&quot;, &quot;c&quot;]
+a.slice(-2, -1) // [&quot;b&quot;]
+//上面代码中，-2表示倒数计算的第二个位置，-1表示倒数计算的第一个位置。
+
+如果第一个参数大于等于数组长度，或者第二个参数小于第一个参数，则返回空数组。
+var a = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+a.slice(4) // []
+a.slice(2, 1) // []</code></pre>
+<h6 id="splice删除"><a href="#splice删除" class="headerlink" title="splice删除"></a>splice删除</h6><pre><code class="javascript">var a = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;];
+a.splice(-4, 2) // [&quot;c&quot;, &quot;d&quot;]
+//上面代码表示，从倒数第四个位置c开始删除两个成员。
+
+如果只是单纯地插入元素，splice方法的第二个参数可以设为0。
+var a = [1, 1, 1];
+a.splice(1, 0, 2) // []  在 删除位置的前面添加了
+a // [1, 2, 1, 1]
+
+如果只提供第一个参数，等同于将原数组在指定位置拆分成两个数组。
+var a = [1, 2, 3, 4];
+a.splice(2) // [3, 4]
+a // [1, 2]</code></pre>
+<h6 id="reverse-sort颠倒-排序"><a href="#reverse-sort颠倒-排序" class="headerlink" title="reverse/sort颠倒/排序"></a>reverse/sort颠倒/排序</h6><pre><code class="javascript">reverse方法用于颠倒排列数组元素，返回改变后的数组(还是原数组)。注意，该方法将改变原数组。
+var a = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+a.reverse() // [&quot;c&quot;, &quot;b&quot;, &quot;a&quot;]
+a // [&quot;c&quot;, &quot;b&quot;, &quot;a&quot;]
+
+sort方法对数组成员进行排序，默认是按照字典顺序排序。排序后，原数组将被改变。
+[&#39;d&#39;, &#39;c&#39;, &#39;b&#39;, &#39;a&#39;].sort();
+// [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
+[4, 3, 2, 1].sort();
+// [1, 2, 3, 4]
+[11, 101].sort();
+// [101, 11]
+[10111, 1101, 111].sort();
+// [10111, 1101, 111]
+//上面代码的最后两个例子，需要特殊注意。sort方法不是按照大小排序，而是按照字典顺序。也就是说，数值会被先转成字符串，再按照字典顺序进行比较，所以101排在11的前面。
+
+如果想让sort方法按照自定义方式排序，可以传入一个函数作为参数。
+[10111, 1101, 111].sort(function (a, b) {
+  return a - b;//升序
+})
+// [111, 1101, 10111]
+//上面代码中，sort的参数函数本身接受两个参数，表示进行比较的两个数组成员。如果该函数的返回值大于0，表示第一个成员排在第二个成员后面；其他情况下，都是第一个元素排在第二个元素前面</code></pre>
+<h6 id="join分隔符"><a href="#join分隔符" class="headerlink" title="join分隔符"></a>join分隔符</h6><pre><code class="javascript">//join方法以指定参数作为分隔符，将所有数组成员连接为一个字符串返回。如果不提供参数，默认用逗号分隔。
+var a = [1, 2, 3, 4];
+a.join(&#39; &#39;) // &#39;1 2 3 4&#39;
+a.join(&#39; | &#39;) // &quot;1 | 2 | 3 | 4&quot;
+a.join() // &quot;1,2,3,4&quot;
+
+//如果数组成员是undefined或null或空位，会被转成空字符串。
+[undefined, null].join(&#39;#&#39;)
+// &#39;#&#39;
+
+[&#39;a&#39;,, &#39;b&#39;].join(&#39;-&#39;)
+// &#39;a--b&#39;</code></pre>
+<h4 id="ES5数组新增方法"><a href="#ES5数组新增方法" class="headerlink" title="ES5数组新增方法"></a>ES5数组新增方法</h4><h6 id="静态方法isArray"><a href="#静态方法isArray" class="headerlink" title="静态方法isArray"></a>静态方法isArray</h6><pre><code class="javascript">静态方法
+Array.isArray()
+Array.isArray方法返回一个布尔值，表示参数是否为数组。它可以弥补typeof运算符的不足。
+var arr = [1, 2, 3];
+typeof arr // &quot;object&quot;
+Array.isArray(arr) // true
+上面代码中，typeof运算符只能显示数组的类型是Object，而Array.isArray方法可以识别数组。</code></pre>
+<h6 id="for-in遍历"><a href="#for-in遍历" class="headerlink" title="for in遍历"></a>for in遍历</h6><h6 id="map方法-遍历"><a href="#map方法-遍历" class="headerlink" title="map方法-遍历"></a>map方法-遍历</h6><pre><code class="js">map方法将数组的所有成员依次传入参数函数，然后把每一次的执行结果组成一个新数组返回。
+
+map方法接受一个函数作为参数。该函数调用时，map方法向它传入三个参数：当前成员、当前位置和数组本身。
+
+[1, 2, 3].map(function(elem, index, arr) {
+  return elem * index;
+});
+// [0, 2, 6]
+上面代码中，map方法的回调函数有三个参数，elem为当前成员的值，index为当前成员的位置，arr为原数组（[1, 2, 3]）</code></pre>
+<h6 id="forEach-遍历"><a href="#forEach-遍历" class="headerlink" title="forEach-遍历"></a>forEach-遍历</h6><pre><code class="js">//forEach方法与map方法很相似，也是对数组的所有成员依次执行参数函数。但是，forEach方法不返回值，只用来操作数据。这就是说，如果数组遍历的目的是为了得到返回值，那么使用map方法，否则使用forEach方法。
+forEach的用法与map方法一致，参数是一个函数，该函数同样接受三个参数：当前值、当前位置、整个数组。
+function log(element, index, array) {
+  console.log(&#39;[&#39; + index + &#39;] = &#39; + element);
+}
+[2, 5, 9].forEach(log);
+// [0] = 2
+// [1] = 5
+// [2] = 9
+
+//注意，forEach方法无法中断执行，总是会将所有成员遍历完。如果希望符合某种条件时，就中断遍历，要使用for循环。
+var arr = [1, 2, 3];
+for (var i = 0; i &lt; arr.length; i++) {
+  if (arr[i] === 2) break;
+  console.log(arr[i]);
+}</code></pre>
+<h6 id="filter过滤"><a href="#filter过滤" class="headerlink" title="filter过滤"></a>filter过滤</h6><pre><code class="js">filter()
+filter方法用于过滤数组成员，满足条件的成员组成一个新数组返回。
+它的参数是一个函数，所有数组成员依次执行该函数，返回结果为true的成员组成一个新数组返回。该方法不会改变原数组。
+
+filter方法的参数函数可以接受三个参数：当前成员，当前位置和整个数组。
+var res = [1, 2, 3, 4, 5].filter(function (elem, index, arr) {
+  return index % 2 === 0;
+});
+res// [1, 3, 5]
+上面代码返回偶数位置的成员组成的新数组。</code></pre>
+<h6 id="reduce依次处理数组成员"><a href="#reduce依次处理数组成员" class="headerlink" title="reduce依次处理数组成员"></a>reduce依次处理数组成员</h6><pre><code class="js">reduce方法依次处理数组的每个成员，最终累计为一个值。reduce是从左到右处理（从第一个成员到最后一个成员）
+reduce方法参数是一个函数,该函数接受以下两个参数。
+1累积变量，默认为数组的第一个成员
+2当前变量，默认为数组的第二个成员
+var res = [1, 2, 3, 4, 5].reduce(function (a, b) {
+  console.log(a, b);
+  return a + b;
+})
+// 1 2
+// 3 3
+// 6 4
+// 10 5
+res//最后结果：15
+
+上面代码中，reduce方法求出数组所有成员的和。第一次执行，a是数组的第一个成员1，b是数组的第二个成员2。第二次执行，a为上一轮的返回值3，b为第三个成员3。第三次执行，a为上一轮的返回值6，b为第四个成员4。第四次执行，a为上一轮返回值10，b为第五个成员5。至此所有成员遍历完成，整个方法的返回值就是最后一轮的返回值15。</code></pre>
+<h6 id="indexOf-lastIndexOf"><a href="#indexOf-lastIndexOf" class="headerlink" title="indexOf(),lastIndexOf()"></a>indexOf(),lastIndexOf()</h6><pre><code class="js">//indexOf方法返回给定元素在数组中第一次出现的位置，如果没有出现则返回-1。
+var a = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+a.indexOf(&#39;b&#39;) // 1
+a.indexOf(&#39;y&#39;) // -1
+//indexOf方法还可以接受第二个参数，表示搜索的开始位置。
+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].indexOf(&#39;a&#39;, 1) // -1
+//上面代码从1号位置开始搜索字符a，结果为-1，表示没有搜索到。
+------------------------------------------
+lastIndexOf方法返回给定元素在数组中最后一次出现的位置，如果没有出现则返回-1。
+var a = [2, 5, 9, 2];
+a.lastIndexOf(2) // 3
+a.lastIndexOf(7) // -1
+注意，这两个方法不能用来搜索NaN的位置，即它们无法确定数组成员是否包含NaN。
+
+[NaN].indexOf(NaN) // -1
+[NaN].lastIndexOf(NaN) // -1
+这是因为这两个方法内部，使用严格相等运算符（===）进行比较，
+而NaN是唯一一个不等于自身的值</code></pre>
+<h4 id="数组小总结"><a href="#数组小总结" class="headerlink" title="数组小总结"></a>数组小总结</h4><pre><code class="javascript">数组：储存一组有序的数据
+数组的作用：一次性储存多个数据
+数组的定义方式：
+ 1.构造函数定义数组：var 数组名 = new Array();
+ 2.字面量方式定义数组：var 数组名 = [];
+
+var 数组名=new Array();//空数组
+var 数组名=new Array(值);//数组定义了，有长度
+var 数组名=new Array(值1，值2，值3...);//数组定义并且有多个数据
+var 数组名=[];//空数组
+var 数组名=[值1，值2，值3]；//有三个数据
+数组元素：就是数组中储存的数据
+数组长度：就是数组中元素的个数
+数组索引(下标)：从0开始，到数组的长度减1结束
+通过下标设置数组的元素值：数组名[索引]=值
+通过下标访问数组的元素值：数组名[索引]
+
+var arr1=new Array();//空数组
+var arr2=new Array(5);//数组的长度为5
+var arr3=new Array(1,2,3,4,5);//数组长度为5，并且有5个值
+var arr4=[];//空数组
+var arr5=[1,2,3]//三个值
+var arr6=[&quot;red&quot;,&quot;blue&quot;,&quot;green&quot;,1,true];//数组内的值的类型可以不一样
+var arr7=[];
+//设置数组元素的值
+arr7[0]=10;
+arr7[1]=20;
+
+方法：
+push//数组尾部新增
+pop//数组尾部删除
+unshift//数组头部新增
+shift//数组头部删除
+slice//复制数组中的一部分
+splice//删除数组中的一部分
+reverse//颠倒数组
+sort//排序
+join//设置链接符号--分隔符，链接数组元素返回字符串
+isArray//静态方法 判断数组
+map//遍历数组进行传值--有返回值
+forEach//遍历数组进行传值--无返回值
+filter//过滤
+reduce//依次处理数组元素
+indexOf,lastIndexOf//查找下标</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1512034032@qq.com </span>
     </div>
@@ -504,6 +784,18 @@
     <a" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>数组</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3.4k</span></p>
+    <p><span class="copy-title">本文作者:</span><a title="小学徒">小学徒</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-11-11, 09:43:27</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-11, 09:37:32</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/11/array/" title="数组">http://1512034032.github.io/2019/11/11/array/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 

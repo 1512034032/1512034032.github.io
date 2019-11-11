@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | 学术渊</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="about | 学术渊">
+  <title>Math&amp;&amp;Date | 学术渊</title>
+  <meta name="keywords" content=" Js ">
+  <meta name="description" content="Math&amp;&amp;Date | 学术渊">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:type" content="website">
@@ -441,24 +441,38 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-MathAndDate" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">Math&amp;&amp;Date</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" target="_blank" data-rel="前端 noopener">前端</a>/
+            
+                <a href="javascript:" target="_blank" data-rel="Js noopener">Js</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" target="_blank" rel="noopener" class="color3">Js</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-06 14:54:02'>2019-11-06 14:54</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-11 09:40:48'>2019-11-11 09:43</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:1.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -477,7 +491,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Math"><span class="toc-text">Math</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一、Math介绍"><span class="toc-text">一、Math介绍</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二、Math方法"><span class="toc-text">二、Math方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Math-abs"><span class="toc-text">Math.abs</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Math-max-min"><span class="toc-text">Math.max/min</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Math-floor-ceil最大-最小整数值"><span class="toc-text">Math.floor/ceil最大/最小整数值</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Math-round四舍五入"><span class="toc-text">Math.round四舍五入</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Math-pow平方"><span class="toc-text">Math.pow平方</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Math-sqrt平方根"><span class="toc-text">Math.sqrt平方根</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#三角函数"><span class="toc-text">三角函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#随机数"><span class="toc-text">随机数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Date"><span class="toc-text">Date</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Date日期处理"><span class="toc-text">Date日期处理</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Date静态方法"><span class="toc-text">Date静态方法</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -493,7 +507,119 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h4 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h4><h5 id="一、Math介绍"><a href="#一、Math介绍" class="headerlink" title="一、Math介绍"></a>一、Math介绍</h5><pre><code class="js">Math是 JavaScript 的原生对象，提供各种数学功能。该对象不是构造函数，不能生成实例，所有的属性和方法都必须在Math对象上调用。
+
+Math对象的属性，提供以下一些数学常数。（了解）
+Math.E：常数e。
+Math.PI：常数 Pi。</code></pre>
+<h5 id="二、Math方法"><a href="#二、Math方法" class="headerlink" title="二、Math方法"></a>二、Math方法</h5><h6 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs"></a>Math.abs</h6><pre><code class="js">//Math.abs方法返回参数值的绝对值。
+Math.abs(1) // 1
+Math.abs(-1) // 1</code></pre>
+<h6 id="Math-max-min"><a href="#Math-max-min" class="headerlink" title="Math.max/min"></a>Math.max/min</h6><pre><code class="js">Math.max方法返回参数之中最大的那个值，Math.min返回最小的那个值。如果参数为空, Math.min返回Infinity, Math.max返回-Infinity。
+
+Infinity 用于存放表示正无穷大的数值
+
+Math.max(2, -1, 5) // 5
+Math.min(2, -1, 5) // -1
+Math.min() // Infinity
+Math.max() // -Infinity</code></pre>
+<h6 id="Math-floor-ceil最大-最小整数值"><a href="#Math-floor-ceil最大-最小整数值" class="headerlink" title="Math.floor/ceil最大/最小整数值"></a>Math.floor/ceil最大/最小整数值</h6><pre><code class="js">Math.floor方法小于参数值的最大整数（地板值）。
+Math.floor(3.2) // 3
+Math.floor(-3.2) // -4
+
+Math.ceil方法返回大于参数值的最小整数（天花板值）。
+Math.ceil(3.2) // 4
+Math.ceil(-3.2) // -3</code></pre>
+<h6 id="Math-round四舍五入"><a href="#Math-round四舍五入" class="headerlink" title="Math.round四舍五入"></a>Math.round四舍五入</h6><pre><code class="js">Math.round方法用于四舍五入。
+Math.round(0.1) // 0
+Math.round(0.5) // 1
+Math.round(0.6) // 1
+Math.round(-1.1) // -1
+Math.round(-1.5) // -1
+Math.round(-1.6) // -2</code></pre>
+<h6 id="Math-pow平方"><a href="#Math-pow平方" class="headerlink" title="Math.pow平方"></a>Math.pow平方</h6><pre><code class="js">Math.pow方法返回以第一个参数为底数、第二个参数为幂的指数值。
+// 等同于 2 ** 2
+Math.pow(2, 2) // 4
+// 等同于 2 ** 3
+Math.pow(2, 3) // 8</code></pre>
+<h6 id="Math-sqrt平方根"><a href="#Math-sqrt平方根" class="headerlink" title="Math.sqrt平方根"></a>Math.sqrt平方根</h6><pre><code class="js">Math.sqrt方法返回参数值的平方根。如果参数是一个负值，则返回NaN。
+Math.sqrt(4) // 2
+Math.sqrt(-4) // NaN
+
+勾股定理复习
+
+a^2+b^2=c^2</code></pre>
+<h6 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h6><pre><code class="js">Math对象还提供一系列三角函数方法
+Math.sin()：返回参数的正弦（参数为弧度值）
+Math.cos()：返回参数的余弦（参数为弧度值）
+Math.tan()：返回参数的正切（参数为弧度值）
+30*Math.PI/180   角度转为弧度
+
+Math.sin(0) // 0
+Math.cos(0) // 1
+Math.tan(0) // 0
+Math.sin(Math.PI / 2) // 1</code></pre>
+<h6 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h6><pre><code class="js">Math.random()返回0到1之间的一个伪随机数，可能等于0，但是一定小于1。
+Math.random() // 0.7151307314634323
+
+任意范围的随机整数生成函数如下。
+function getRandomInt(min, max) {
+  return parseInt(Math.random() * (max - min + 1)) + min;
+}
+getRandomInt(1, 6) // 5</code></pre>
+<h4 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h4><pre><code class="js">作为构造函数时，Date对象可以接受多种格式的参数，返回一个该参数对应的时间实例。
+// 参数为时间零点开始计算的毫秒数
+new Date(1378218728000)（最常用）
+// Tue Sep 03 2013 22:32:08 GMT+0800 (CST)
+/ 参数为多个整数，
+// 代表年、月、日、小时、分钟、秒、毫秒
+new Date(2013, 0, 1, 0, 0, 0, 0)
+// Tue Jan 01 2013 00:00:00 GMT+0800 (CST)
+参数也可以是一个字符串（最常用）
+日期字符串应该符合 RFC 2822 和 ISO 8061 这两个标准，即YYYY-MM-DDTHH:mm:ss.sssZ格式
+new Date(&#39;2013-2-15&#39;)
+new Date(&#39;2013/2/15&#39;)
+new Date(&#39;02/15/2013&#39;)
+new Date(&#39;2013-FEB-15&#39;)
+new Date(&#39;FEB, 15, 2013&#39;)
+new Date(&#39;Feberuary, 15, 2013&#39;)
+new Date(&#39;15 Feb 2013&#39;)
+new Date(&#39;15, Feberuary, 2013&#39;)
+ 上面多种日期字符串的写法，返回的都是同一个时间</code></pre>
+<h6 id="Date日期处理"><a href="#Date日期处理" class="headerlink" title="Date日期处理"></a>Date日期处理</h6><pre><code class="js">//获取:
+            oDate.getDate()            //返回一个月中的某一天 (1 ~ 31)
+            oDate.getDay()            //返回一周中的某一天 (0 ~ 6)
+            oDate.getMonth()        //返回月份 (0 ~ 11)
+            oDate.getFullYear()        //以四位数字返回年份
+            oDate.getHours()        //返回当前小时（0-23）
+            oDate.getMinutes()        //返回当前分钟 (0 ~ 59)
+            oDate.getSeconds()        //返回当前秒(0 ~ 59)
+            oDate.getMillisenconds()//返回当前毫秒(0 ~ 999)
+            //注意，月份从0开始计算，但是，天数从1开始计算。另外，除了日期的默认值为1，小时、分钟、秒钟和毫秒的默认值都是0。
+            new Date(2013, 15)
+            // Tue Apr 01 2014 00:00:00 GMT+0800 (CST)
+
+//设置：
+            oDate.getTime()返回1970年1月1日至今的毫秒数
+            oDate.setDate();        //设置月中的某一天 (1 ~ 31)
+            oDate.setMonth();        //设置月份 (0 ~ 11)
+            //例：oDate.setMonth(9);  alert(oDate.getMonth())
+            oDate.setFullYear();    //设置年份（四位数）
+            oDate.setHours();        //设置小时（0-23）
+            oDate.setMinutes();        //设置分钟 (0 ~ 59)
+            oDate.setSeconds();        //设置秒(0 ~ 59)
+            oDate.setMillisenconds();//设置毫秒(0 ~ 999)
+            oDate.setTime();        //设置1970年1月1日至今的毫秒数
+            //这些参数如果超出了正常范围，会被自动折算。比如，如果月设为15，就折算为下一年的4月</code></pre>
+<h6 id="Date静态方法"><a href="#Date静态方法" class="headerlink" title="Date静态方法"></a>Date静态方法</h6><pre><code class="js">Date.parse方法用来解析日期字符串，返回该时间距离时间零点（1970年1月1日 00:00:00）的毫秒数。
+日期字符串应该符合 RFC 2822 和 ISO 8061 这两个标准，即YYYY-MM-DDTHH:mm:ss.sssZ格式，其中最后的Z表示时区。但是，其他格式也可以被解析，请看下面的例子。
+Date.parse(&#39;Aug 9, 1995&#39;)
+Date.parse(&#39;January 26, 2011 13:51:50&#39;)
+Date.parse(&#39;Mon, 25 Dec 1995 13:30:00 GMT&#39;)
+Date.parse(&#39;Mon, 25 Dec 1995 13:30:00 +0430&#39;)
+Date.parse(&#39;2011-10-10&#39;)
+Date.parse(&#39;2011-10-10T14:48:00&#39;)</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1512034032@qq.com </span>
     </div>
@@ -504,6 +630,18 @@
     <a" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Math&amp;&amp;Date</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.2k</span></p>
+    <p><span class="copy-title">本文作者:</span><a title="小学徒">小学徒</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-11-11, 09:43:27</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-11, 09:40:48</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/11/MathAndDate/" title="Math&amp;&amp;Date">http://1512034032.github.io/2019/11/11/MathAndDate/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 

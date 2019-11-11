@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | 学术渊</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="about | 学术渊">
+  <title>js正则 | 学术渊</title>
+  <meta name="keywords" content=" Js ">
+  <meta name="description" content="js正则 | 学术渊">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:type" content="website">
@@ -441,24 +441,38 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-regular" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">js正则</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" target="_blank" data-rel="前端 noopener">前端</a>/
+            
+                <a href="javascript:" target="_blank" data-rel="Js noopener">Js</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" target="_blank" rel="noopener" class="color3">Js</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-06 14:54:02'>2019-11-06 14:54</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-11 09:32:41'>2019-11-11 09:43</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:3k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -477,7 +491,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：正则的概念"><span class="toc-text">1：正则的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：创建方式"><span class="toc-text">2：创建方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：正则对象方法"><span class="toc-text">3：正则对象方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4：字符串函数"><span class="toc-text">4：字符串函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5：正则表达式构成"><span class="toc-text">5：正则表达式构成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#正则分组"><span class="toc-text">正则分组</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -493,7 +507,294 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ul>
+<li><h4 id="1：正则的概念"><a href="#1：正则的概念" class="headerlink" title="1：正则的概念"></a>1：正则的概念</h4></li>
+</ul>
+<blockquote>
+<p>正则表达式(regular expression)是一个描述字符规则的对象。可以用来检查一个字符串是否含有某个子字符串，将匹配的子字符串做替换或者从某个字符串中取出符合某个条件的子串等。</p>
+</blockquote>
+<p>为什么要用正则：</p>
+<blockquote>
+<p>前端往往有大量的表单数据校验工作，采用正则表达式会使得数据校验的工作量大大减轻。常用效果：邮箱、手机号、身份证号等。</p>
+</blockquote>
+<ul>
+<li><h4 id="2：创建方式"><a href="#2：创建方式" class="headerlink" title="2：创建方式"></a>2：创建方式</h4></li>
+</ul>
+<p>第一种方式：</p>
+<pre><code class="js">var reg = new RegExp(“study”，“ig”);   // 第二个参数为修饰符</code></pre>
+<p> i：表示忽略大小写ignore。</p>
+<p>g：表示全局匹配，查找所有匹配而非在找到第一个匹配后停止 global。</p>
+<p>第二种方式：</p>
+<pre><code class="js">var reg = /study/ig;</code></pre>
+<ul>
+<li><h4 id="3：正则对象方法"><a href="#3：正则对象方法" class="headerlink" title="3：正则对象方法"></a>3：正则对象方法</h4></li>
+</ul>
+<p>test： 正则实例对象的<code>test</code>方法返回一个布尔值，表示当前模式是否能匹配参数字符串</p>
+<pre><code>/cat/.test(&#39;cats and dogs&#39;) // true</code></pre><p>上面代码验证参数字符串之中是否包含<code>cat</code>，结果返回<code>true</code>。</p>
+<p>如果正则表达式带有<code>g</code>修饰符，则每一次<code>test</code>方法都从上一次结束的位置开始向后匹配</p>
+<pre><code class="js">var r = /x/g;var s = &#39;x_x&#39;;
+r.lastIndex // 0
+r.test(s) // true
+r.lastIndex // 2
+r.test(s) // true
+r.lastIndex // 4
+r.test(s) // false</code></pre>
+<p>上面代码的正则表达式使用了<code>g</code>修饰符，表示是全局搜索，会有多个结果。接着，三次使用<code>test</code>方法，每一次开始搜索的位置都是上一次匹配的后一个位置。</p>
+<p>带有<code>g</code>修饰符时，可以通过正则对象的<code>lastIndex</code>属性指定开始搜索的位置</p>
+<pre><code class="js">var r = /x/g;
+var s = &#39;x_x&#39;;
+r.lastIndex = 4;
+r.test(s) // false</code></pre>
+<p>上面代码指定从字符串的第五个位置开始搜索，这个位置是没有字符的，所以返回<code>false</code>。</p>
+<p>exec：用于检索字符串中的正则表达式的匹配。返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为null。</p>
+<pre><code class="js">var s = &#39;x_x&#39;;
+var r1 = /x/;
+var r2 = /y/;
+r1.exec(s) // [&quot;x&quot;]
+r2.exec(s) // null</code></pre>
+<p>上面代码中，正则对象<code>r1</code>匹配成功，返回一个数组，成员是匹配结果；正则对象<code>r2</code>匹配失败，返回<code>null</code>。</p>
+<ul>
+<li><h4 id="4：字符串函数"><a href="#4：字符串函数" class="headerlink" title="4：字符串函数"></a>4：字符串函数</h4></li>
+</ul>
+<p>replace： 按照给定的正则表达式进行替换，返回替换后的字符串。</p>
+<p>​        字符串对象的<code>replace</code>方法可以替换匹配的值。它接受两个参数，第一个是正则表达式，表示搜索模式，第二个是替换的内容。</p>
+<pre><code class="js">str.replace(search, replacement)</code></pre>
+<p>正则表达式如果不加<code>g</code>修饰符，就替换第一个匹配成功的值，否则替换所有匹配成功的值。</p>
+<pre><code class="js">&#39;aaa&#39;.replace(&#39;a&#39;, &#39;b&#39;) // &quot;baa&quot;
+&#39;aaa&#39;.replace(/a/, &#39;b&#39;) // &quot;baa&quot;
+&#39;aaa&#39;.replace(/a/g, &#39;b&#39;) // &quot;bbb&quot;
+//上面代码中，最后一个正则表达式使用了g修饰符，导致所有的b都被替换掉了。</code></pre>
+<p>match： 字符串实例对象的<code>match</code>方法对字符串进行正则匹配，返回匹配结果。</p>
+<pre><code class="js">var s = &#39;_x_x&#39;;
+var r1 = /x/;
+var r2 = /y/;
+s.match(r1) //[&quot;x&quot;]
+s.match(r2) // null
+//从上面代码可以看到，字符串的match方法与正则对象的exec方法非常类似：匹配成功返回一个数组，匹配失败返回null。</code></pre>
+<p>如果正则表达式带有<code>g</code>修饰符，则该方法与正则对象的<code>exec</code>方法行为不同，会一次性返回所有匹配成功的结果</p>
+<pre><code class="js">var s = &#39;abba&#39;;
+var r = /a/g;
+s.match(r) // [&quot;a&quot;, &quot;a&quot;]
+r.exec(s) // [&quot;a&quot;]</code></pre>
+<p>search：检索与正则表达式相匹配的值。返回字符串中第一个与正则表达式相匹配的子串的起始位置。如果没有找到则返回-1。</p>
+<pre><code class="js">&#39;_x_x&#39;.search(/x/)// 1
+//上面代码中，第一个匹配结果出现在字符串的1号位置。</code></pre>
+<ul>
+<li><h4 id="5：正则表达式构成"><a href="#5：正则表达式构成" class="headerlink" title="5：正则表达式构成"></a>5：正则表达式构成</h4></li>
+</ul>
+<p>大部分字符在正则表达式中，就是字面的含义，比如<code>/a/</code>匹配<code>a</code>，<code>/b/</code>匹配<code>b</code>。如果在正则表达式之中，某个字符只表示它字面的含义（就像前面的<code>a</code>和<code>b</code>），那么它们就叫做“字面量字符”。</p>
+<pre><code class="js">/dog/.test(&#39;old dog&#39;) // true</code></pre>
+<p>上面代码中正则表达式的<code>dog</code>，就是字面量字符，所以<code>/dog/</code>匹配<code>old dog</code>，因为它就表示<code>d</code>、<code>o</code>、<code>g</code>三个字母连在一起。</p>
+<p>除了字面量字符以外，还有一部分字符有特殊含义，不代表字面的意思。它们叫做“元字符”，主要有以下几个</p>
+<p>正则表达式是由普通字符（例如字符a到z）以及特殊字符（称为元字符）组成的文字模式。正则表达式作为一个模板，将某个字符模式与所搜索的字符串进行匹配。</p>
+<p>元字符—限定符：</p>
+<p>限定符可以指定正则表达式的一个给定组件必须要出现多少次才能满足匹配。</p>
+<ul>
+<li>​            *：匹配前面的子表达式零次或多次。</li>
+<li>​            +：匹配前面的子表达式一次或多次。</li>
+<li>​            ？：匹配前面的子表达式零次或一次。</li>
+<li>​            {n}：匹配确定n次。</li>
+<li>​            {n,}：至少匹配n次。</li>
+<li>​            {n, m}：最少匹配n次且最多匹配m次。</li>
+</ul>
+<pre><code class="js">// t 出现0次或1次
+/t?est/.test(&#39;test&#39;) // true
+/t?est/.test(&#39;est&#39;) // true
+// t 出现1次或多次
+/t+est/.test(&#39;test&#39;) // true
+/t+est/.test(&#39;ttest&#39;) // true
+/t+est/.test(&#39;est&#39;) // false
+// t 出现0次或多次/test
+/t*est(&#39;test&#39;) // true
+/t*est/.test(&#39;ttest&#39;) // true
+/t*est/.test(&#39;tttest&#39;) // true
+/t*est/.test(&#39;est&#39;) // true
+
+/lo{2}k/.test(&#39;look&#39;) // true
+/lo{2,5}k/.test(&#39;looook&#39;) // true
+//上面代码中，第一个模式指定o连续出现2次，第二个模式指定o连续出现2次到5次之间</code></pre>
+<p>元字符—字符匹配符：</p>
+<p>字符匹配符用于匹配某个或某些字符。</p>
+<p>[xyz]：字符集合。匹配所包含的任意一个字符。</p>
+<pre><code class="js">/[abc]/.test(&#39;hello world&#39;) // false
+/[abc]/.test(&#39;apple&#39;) // true
+//上面代码中，字符串hello world不包含a、b、c这三个字母中的任一个，所以返回false；字符串apple包含字母a，所以返回true</code></pre>
+<p>[^xyz]： 表示除了<code>x</code>、<code>y</code>、<code>z</code>之外都可以匹配。</p>
+<pre><code class="js">/abc/.test(&#39;hello world&#39;) // true
+/abc/.test(&#39;bbc&#39;) // false
+//上面代码中，字符串hello world不包含字母a、b、c中的任一个，所以返回true；字符串bbc不包含a、b、c以外的字母，所以返回false。</code></pre>
+<p>[a-z]：字符范围。匹配指定范围内的任意字符。</p>
+<p><code>[abc]</code>可以写成<code>[a-c]</code>，<code>[0123456789]</code>可以写成<code>[0-9]</code>，同理<code>[A-Z]</code>表示26个大写字母。</p>
+<pre><code class="js">/[a-z]/.test(&#39;b&#39;) // true</code></pre>
+<p>这样也可以：[0-9]、[0-9a-z]、[0-9a-zA-Z]</p>
+<p>[0-9a-zA-Z]  表示数字0-9，大小字母</p>
+<p>[^a-z]：表示不包含小写字母。</p>
+<blockquote>
+<p>\d 匹配0-9之间的任一数字，相当于[0-9]。</p>
+</blockquote>
+<blockquote>
+<p>\D 匹配所有0-9以外的字符，相当于[^0-9]。</p>
+</blockquote>
+<blockquote>
+<p>\w 匹配任意的字母、数字和下划线，相当于[A-Za-z0-9_]。</p>
+</blockquote>
+<blockquote>
+<p>\W 除所有字母、数字和下划线以外的字符，相当于[^A-Za-z0-9_]。 </p>
+</blockquote>
+<blockquote>
+<p>\s 匹配空格（包括换行符、制表符、空格符等）。 </p>
+</blockquote>
+<blockquote>
+<p>\S 匹配非空格的字符。</p>
+</blockquote>
+<blockquote>
+<p>.：匹配除”\n”之外的任何单个字符。</p>
+</blockquote>
+<p>元字符—定位符：</p>
+<p>定位符可以将一个正则表达式固定在一行的开始或结束。也可以创建只在单词内或只在单词的开始或结尾处出现的正则表达式。</p>
+<p>^：匹配输入字符串的开始位置。</p>
+<p>$：匹配输入字符串的结束位置。</p>
+<pre><code class="js">// test必须出现在开始位置
+/^test/.test(&#39;test123&#39;) // true
+
+// test必须出现在结束位置
+/test$/.test(&#39;new test&#39;) // true
+
+// 从开始位置到结束位置只有test
+/^test/.test(&#39;test&#39;) // true
+/^test/.test(&#39;test test&#39;) // false</code></pre>
+<p>元字符—转义符：</p>
+<p>\：用于匹配某些特殊字符。</p>
+<p>正则表达式中那些有特殊含义的元字符，如果要匹配它们本身，就需要在它们前面要加上反斜杠。比如要匹配<code>+</code>，就要写成<code>\+</code>。</p>
+<pre><code class="js">/1+1/.test(&#39;1+1&#39;)// false
+/1+1/.test(&#39;1+1&#39;)// true
+//上面代码中，第一个正则表达式之所以不匹配，因为加号是元字符，不代表自身。第二个正则表达式使用反斜杠对加号转义，就能匹配成功。</code></pre>
+<p>元字符—选择匹配符：</p>
+<p><code>|</code>：可以匹配多个规则。竖线符号（<code>|</code>）在正则表达式中表示“或关系”（OR），即<code>cat|dog</code>表示匹配<code>cat</code>或<code>dog</code>。</p>
+<pre><code class="js">/11|22/.test(&#39;911&#39;) // true
+//上面代码中，正则表达式指定必须匹配11或22
+// 匹配fred、barney、betty之中的一个
+/fred|barney|betty/</code></pre>
+<p>应用：</p>
+<ol>
+<li>掌握正则的创建方式。</li>
+<li>掌握正则表达式的语言。</li>
+</ol>
+<p>常用正则</p>
+<blockquote>
+<p>邮政编码检测</p>
+</blockquote>
+<pre><code class="js">/^\d{6}$/</code></pre>
+<blockquote>
+<p>文件格式监测</p>
+</blockquote>
+<pre><code class="js">/^.+.(jpeg|png|gif|jpg)$/</code></pre>
+<blockquote>
+<p>字符串首尾去空格。</p>
+</blockquote>
+<pre><code class="js">var str = &#39;      avaasdf &#39;;
+var reg = /^\s+|\s+$/g;        
+console.log(str.replace(reg,&#39;&#39;))</code></pre>
+<blockquote>
+<p>邮件格式监测。</p>
+</blockquote>
+<pre><code class="js">/^\w+[-+.]\w@([a-z0-9A-Z\u2E80-\u9FFF]-?)+(.\w{2,6})+/</code></pre>
+<blockquote>
+<p>手机号监测</p>
+</blockquote>
+<pre><code class="js">/^(13[0-9]|14[0-9]|15[0-9]|18[0-9]|17[0-9])\d{8}$/</code></pre>
+<blockquote>
+<p>身份证监测</p>
+</blockquote>
+<pre><code class="js">/(^\d{15}|^\d{18})|^\d{17}X$/</code></pre>
+<blockquote>
+<p>中文监测</p>
+<p>unicode编码中文监测</p>
+</blockquote>
+<pre><code class="js">/^[\u2E80-\u9FFF]+$/</code></pre>
+<blockquote>
+<p>用户名监测（规则数字字母下划线-组成，3-16位）</p>
+</blockquote>
+<pre><code class="js">/^[a-z0-9_-]{3,16}$/</code></pre>
+<h4 id="正则分组"><a href="#正则分组" class="headerlink" title="正则分组"></a>正则分组</h4><pre><code class="js">//1-什么是分组
+var reg = /(\d{2})/
+reg.test(&#39;12&#39;);  //true
+// 这里reg中的(/d{2})就表示一个分组，匹配两位数字
+/*
+/hahaha/
+/(ha){3}/
+这两个表达式是等效的，但有了分组之后可以更急简洁
+*/
+
+//2- 捕获型 分组 ()
+// 被正则表达式捕获(匹配)到的字符串会被暂存起来，其中，由分组捕获到的字符串会从1开始编号，于是我们可以引用这些字符串：
+var reg = /(\d{4})-(\d{2})-(\d{2})/;
+var dateStr = &#39;2018-04-18&#39;;
+reg.test(dateStr);  //true
+//引用捕获到的内容使用 $1 代表第一个分组的捕获到的内容
+RegExp.$1   //2018
+RegExp.$2   //04
+RegExp.$3   //18
+
+// 3-非捕获型 (?:)
+// 有的时候只是为了分组并不需要捕获的情况下就可以使用非捕获型分组
+var reg = /(?:\d{4})-(\d{2})-(\d{2})/
+var date = &#39;2012-12-21&#39;
+reg.test(date)
+RegExp.$1 // 12
+RegExp.$2 // 21
+
+// 4- 结合replace方法做字符串自定义替换
+var dateStr = &#39;2018/04/18&#39;;
+var reg = /(\d{4})\/(\d{2})\/(\d{2})/;
+dateStr = dateStr.replace(reg, &#39;$1-$2-$3&#39;) //&quot;2018-04-18&quot;
+//不过这里需要注意的是/是需要用\转义的
+
+
+// 5- 结合正则exec方法来使用
+//通俗来说，分组就是在正则表达式中用（）包起来的内容代表了一个分组
+        var s;
+        var re = new RegExp(&quot;d(b+)(d)&quot;, &quot;ig&quot;);
+        var str = &quot;cdbBdbsbdbdz&quot;;
+        var arr = re.exec(str);
+        console.log(arr)
+/*
+0: &quot;dbBd&quot;  正则整体匹配到的字符
+1: &quot;bB&quot;    第一个小括号(分组)匹配到的字符
+2: &quot;d&quot;     第二个小括号（分组）匹配到的字符
+*/
+    //  第一个分组的结果也可以用 RegExp.$1   获取
+        s = &quot;$1 contains: &quot; + RegExp.$1 + &quot;\n&quot;;
+        s += &quot;$2 contains: &quot; + RegExp.$2 + &quot;\n&quot;;
+        console.log(s)
+
+// 6- 结合字符串match方法使用
+        var str = &quot;http://www.taobao.com:80/cuxiao/hongbao.html&quot;;
+        var patt1 = /(\w+):\/\/([^/:]+)(:\d*)?([^# ]*)/;
+        arr = str.match(patt1);
+        console.log(arr);
+/*
+0: &quot;http://www.taobao.com:80/cuxiao/hongbao.html&quot;  整个正则匹配到的字符串
+1: &quot;http&quot;     第一个分组 匹配到的字符串
+2: &quot;www.taobao.com&quot;   第二个分组 匹配到的字符串
+3: &quot;:80&quot;      第三个分组 匹配到的字符串
+4: &quot;/cuxiao/hongbao.html&quot;   第四个分组 匹配到的字符串
+*/
+        //第一个分组的结果也可以用 RegExp.$1   获取
+        console.log(RegExp.$1)//http
+
+//把url参数转对象
+        var parseQuery = function (query) {
+            var reg = /([^=&amp;\s]+)[=\s]*([^&amp;\s]*)/g;
+            var obj = {};
+            while (reg.exec(query)) {
+                obj[RegExp.$1] = RegExp.$2;
+            }
+            console.log(obj)
+            return obj;
+        }
+parseQuery(&quot;userID=JeoOrCXxyiOFxbYaGL40kw&amp;userPwd=sdFo2ziUw8HyLRKd4i6GAQ&amp;userName=aa&quot;)</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1512034032@qq.com </span>
     </div>
@@ -504,6 +805,18 @@
     <a" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>js正则</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3k</span></p>
+    <p><span class="copy-title">本文作者:</span><a title="小学徒">小学徒</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-11-11, 09:43:27</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-11, 09:32:41</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/11/regular/" title="js正则">http://1512034032.github.io/2019/11/11/regular/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 

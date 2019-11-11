@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | 学术渊</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="about | 学术渊">
+  <title>js动画 | 学术渊</title>
+  <meta name="keywords" content=" Js ">
+  <meta name="description" content="js动画 | 学术渊">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:type" content="website">
@@ -441,24 +441,38 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-JsAnimation" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">js动画</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" target="_blank" data-rel="前端 noopener">前端</a>/
+            
+                <a href="javascript:" target="_blank" data-rel="Js noopener">Js</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" target="_blank" rel="noopener" class="color3">Js</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-06 14:54:02'>2019-11-06 14:54</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-11 09:47:02'>2019-11-11 09:43</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:1.1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -477,7 +491,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#运动也可以叫做动画"><span class="toc-text">运动也可以叫做动画</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1：运动原理"><span class="toc-text">1：运动原理</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2：边界处理"><span class="toc-text">2：边界处理</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3：加速减速"><span class="toc-text">3：加速减速</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4：抛物线"><span class="toc-text">4：抛物线</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5：透明度的变换"><span class="toc-text">5：透明度的变换</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#6：缓冲运动"><span class="toc-text">6：缓冲运动</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#7：多属性缓冲运动函数封装"><span class="toc-text">7：多属性缓冲运动函数封装</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -493,7 +507,131 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h4 id="运动也可以叫做动画"><a href="#运动也可以叫做动画" class="headerlink" title="运动也可以叫做动画"></a>运动也可以叫做动画</h4><h6 id="1：运动原理"><a href="#1：运动原理" class="headerlink" title="1：运动原理"></a>1：运动原理</h6><p>通过连续不断的改变物体的位置，而发生移动变化。</p>
+<p>使用<code>setInterval</code>实现。</p>
+<p>匀速运动：速度值一直保持不变。</p>
+<p>多物体同时运动：将定时器绑设置为对象的一个属性。</p>
+<p>注：物体每次运动都应该把之前的定时器清除掉。</p>
+<pre><code class="js">//box为绝对定位
+var speedX = 2
+box.timer = setInterval(function(){
+    box.style.left = box.offsetLeft + speedX +&#39;px&#39;;
+},80)</code></pre>
+<h6 id="2：边界处理"><a href="#2：边界处理" class="headerlink" title="2：边界处理"></a>2：边界处理</h6><p>遇到边界是应该停止掉还是反弹，方向相反。</p>
+<p>改变物体运动方向：将物体的速度值取反。</p>
+<pre><code class="js">//边界属性  浏览器视口宽高
+//返回当前视口的高度（即浏览器窗口的高度）
+console.log(document.documentElement.clientHeight)
+console.log(document.documentElement.clientWidth)
+// 网页总高度     body默认有margin，记得重置console.log(document.body.clientHeight)
+console.log(document.body.clientWidth)</code></pre>
+<pre><code class="js">var speedX = 2 
+box.timer = setInterval(function(){
+    box.style.left = box.offsetLeft + speedX +&#39;px&#39;;
+    //左右边界
+    if(box.offsetLeft &lt;=0 || box.offsetLeft &gt;= cWidth - box.offsetWidth){
+        speedX = -speedX;
+    }
+},80)</code></pre>
+<h6 id="3：加速减速"><a href="#3：加速减速" class="headerlink" title="3：加速减速"></a>3：加速减速</h6><p>加速：速度越来越快。</p>
+<p>减速：速度越来越慢。</p>
+<pre><code class="js">box.timer = setInterval(function() {
+    speedX = speedX + 2;
+    div.style.left = div.offsetLeft + speedX + &#39;px&#39;;
+}, 50);</code></pre>
+<h6 id="4：抛物线"><a href="#4：抛物线" class="headerlink" title="4：抛物线"></a>4：抛物线</h6><p>水平方向有一速度，垂直方向有一速度，并做自由落体。</p>
+<pre><code class="js">var speedY = 0;
+var speedX = 10;
+// x 方向  匀速
+// y 方向  匀加速
+box.timer = setInterval(function() {
+    speedY += 9.8
+    box.style.left = box.offsetLeft + speedX + &#39;px&#39;;
+    box.style.top = box.offsetTop + speedY + &#39;px&#39;;
+}, 80)</code></pre>
+<h6 id="5：透明度的变换"><a href="#5：透明度的变换" class="headerlink" title="5：透明度的变换"></a>5：透明度的变换</h6><p>box逐渐消失</p>
+<pre><code class="js">//使用css将box的opacity 设置为1
+var op = 1;box.timer = setInterval(function() {
+    op = op - 0.01;
+    div.style.opacity = op
+    //或者
+    //div.style.opacity = getComputedStyle(div).opacity - 0.01;
+}, 80);</code></pre>
+<h6 id="6：缓冲运动"><a href="#6：缓冲运动" class="headerlink" title="6：缓冲运动"></a>6：缓冲运动</h6><p>速度一开始很大，然后慢慢变小，比较类似自然界中的缓冲运动</p>
+<pre><code class="js">//一开始box 在 （0，0）位置，我们将box运动到（300,0）位置
+var target = 300; //目标位置
+box.timer = setInterval(function() {
+    //target - div.offsetLeft 是元素距离目标的路程，随着越来越靠近目标，这个值就越来越小，如果把这个值当做速度，速度一开始很大，然后慢慢变小，比较类似自然界中的缓冲运动。如果把这个值直接当速度，一下子就到，所以除以8以后当做速度
+    var speed = (target - div.offsetLeft) / 8;
+    //所以要对速度向上取整得到速度1，当speed小于0.375的时候，div就不会移动了
+    speed = Math.ceil(speed);
+    box.style.left = div.offsetLeft + speed + &#39;px&#39;;
+    if(box.offsetLeft == target) {
+        //到达目标清除定时器
+        clearInterval(box.timer);
+    }
+}, 30);
+</code></pre>
+<p>考虑到运动的时候可能往前，也可以能往后，增加判断</p>
+<pre><code class="js">//一开始box 在 （0，0）位置，我们将box运动到（300,0）位置
+var target = 300; //目标位置
+div.timer = setInterval(function() {
+    var speed = (target - div.offsetLeft) / 8;
+    //当speed小于0.375的时候，div就不会移动了
+    //所以要对速度向上取整或者向下取整
+    if(speed &gt; 0) {
+        //speed大于0 说明是往前运动
+        //当speed小于0.375的时候，div就不会移动了
+        //所以要对速度向上取整或者向下取整
+        speed = Math.ceil(speed);
+    } else {
+        //speed大于0 说明是往后运动
+        speed = Math.floor(speed);
+    }
+    div.style.left = div.offsetLeft + speed + &#39;px&#39;;
+    if(div.offsetLeft == target) {
+        clearInterval(div.timer);
+    }
+}, 30);</code></pre>
+<p>上面代码封装为函数</p>
+<pre><code class="js">function animate(div,targetX) {
+    var target = targetX;
+    div.timer =  setInterval(function () {
+        var speed = (target - div.offsetTop)/8;
+        speed = (speed&gt;0? Math.ceil(speed): Math.floor(speed));
+        div.style.top = div.offsetTop + speed +&#39;px&#39;;
+        if(div.offsetTop == target){
+            clearInterval(div.timer);
+        }
+    },30);
+}</code></pre>
+<h6 id="7：多属性缓冲运动函数封装"><a href="#7：多属性缓冲运动函数封装" class="headerlink" title="7：多属性缓冲运动函数封装"></a>7：多属性缓冲运动函数封装</h6><p>上面的封装只能固定的在x方向做动画</p>
+<p>如果想让一个div 从一个点运动到另一个点，怎么办？</p>
+<p>比如从（0，0）到（100，200）这个时候我们把第二个参数改为一个这样的对象<code>{left:100;top:200}</code></p>
+<pre><code class="js">function animate(div, obj) {
+    //{left:100;top:200}
+    //{left:100}
+    clearInterval(div.timer);
+    div.timer = setInterval(function() {
+        var flag = true; //假设已经到了目的地
+        for(var key in obj) {
+            console.log(key) //left   top
+            console.log(obj[key]) //300
+            var target = obj[key]; //目标值
+            // getComputedStyle[&#39;left&#39;]  元素left 属性 当前值
+            var speed = (target - parseInt(getComputedStyle(div)[key])) / 8;                          speed = (speed &gt; 0 ? Math.ceil(speed) : Math.floor(speed));                              div.style[key] = parseInt(getComputedStyle(div)[key]) + speed + &#39;px&#39;;
+            if(parseInt(getComputedStyle(div)[key]) != target) {
+                flag = false;
+            }
+        }
+        //必须等到所有的 属性都到达目的地 才能结束定时器
+        if(flag == true) {
+            clearInterval(div.timer);
+        }
+    }, 30);
+}</code></pre>
+<p>上面咱们就封装了一个运动函数，也可以叫运动框架，说白了，就是封装一次以后，我们再做一些动画就非常方便！前人栽树后人乘凉，便是框架的好处！</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1512034032@qq.com </span>
     </div>
@@ -504,6 +642,18 @@
     <a" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>js动画</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a title="小学徒">小学徒</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-11-11, 09:43:27</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-11, 09:47:02</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/11/JsAnimation/" title="js动画">http://1512034032.github.io/2019/11/11/JsAnimation/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 
