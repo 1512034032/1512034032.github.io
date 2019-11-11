@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://1512034032.github.io/2019/11/07/js/</loc>
+    
+    <lastmod>2019-11-11T01:13:28.788Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://1512034032.github.io/2019/11/08/websocket/</loc>
     
     <lastmod>2019-11-09T11:48:11.465Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>http://1512034032.github.io/2019/11/07/promise/</loc>
     
     <lastmod>2019-11-09T11:47:37.432Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://1512034032.github.io/2019/11/07/js/</loc>
-    
-    <lastmod>2019-11-09T11:47:32.213Z</lastmod>
     
   </url>
   
