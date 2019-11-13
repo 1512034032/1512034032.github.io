@@ -6,12 +6,14 @@
   <meta name="keywords" content="">
   <meta name="description" content="React 基础 | 学术渊">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http:&#x2F;&#x2F;1512034032.github.io&#x2F;about&#x2F;index.html">
+<meta property="og:title" content="404">
+<meta property="og:url" content="http:&#x2F;&#x2F;1512034032.github.io&#x2F;404.html">
 <meta property="og:site_name" content="学术渊">
+<meta property="og:description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-06T06:54:02.901Z">
+<meta property="og:updated_time" content="2019-11-07T03:15:57.684Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -135,6 +137,14 @@
     
         
             
+            <li><div data-rel="Node">Node<small>(6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
             <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端<small>(12)</small></div>
                 
                     <ul class="sub hide">
@@ -144,14 +154,6 @@
                         </li>
                             
                     </ul>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="Node">Node<small>(6)</small></div>
                 
             </li>
             
@@ -214,11 +216,11 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a class="color3">Js</a>
+        <a class="color5">Node</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">Node</a>
+        <a class="color3">Js</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -451,7 +453,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-13 20:21:52'>2019-11-13 20:18</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-13 20:29:29'>2019-11-13 20:18</time>
         
     </div>
     <div class="article-meta">
@@ -475,7 +477,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#父向子传值"><span class="toc-text">父向子传值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#子向父传值"><span class="toc-text">子向父传值</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React-生命周期"><span class="toc-text">React 生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#diff算法"><span class="toc-text">diff算法</span></a>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#纯组件"><span class="toc-text">纯组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件接收属性值的传递"><span class="toc-text">组件接收属性值的传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#受控组件"><span class="toc-text">受控组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#父子组件之间的传值"><span class="toc-text">父子组件之间的传值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#父向子传值"><span class="toc-text">父向子传值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#子向父传值"><span class="toc-text">子向父传值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React-生命周期"><span class="toc-text">React 生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#diff算法"><span class="toc-text">diff算法</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -491,16 +493,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>纯组件</p>
-<pre><code>import React ,{useState,useEffect} from &#39;react&#39;;
+        <h4 id="纯组件"><a href="#纯组件" class="headerlink" title="纯组件"></a>纯组件</h4><pre><code>import React ,{useState,useEffect} from &#39;react&#39;;
 const Chun = (props)=&gt;{
     return (
         &lt;div&gt;纯组件&lt;/div&gt;
     )
 }
 
-export default Chun;</code></pre><p>组件接收属性值的传递</p>
-<pre><code class="jsx">import React,{Component} from &#39;react&#39;
+export default Chun;</code></pre><h4 id="组件接收属性值的传递"><a href="#组件接收属性值的传递" class="headerlink" title="组件接收属性值的传递"></a>组件接收属性值的传递</h4><pre><code class="jsx">import React,{Component} from &#39;react&#39;
 
 class Home extends Component{
     render(){
@@ -510,8 +510,7 @@ class Home extends Component{
     }
 }
 ReactDOM.render(&lt;Home name=&quot;title&quot;/&gt;,document.getElementById(&#39;app)) //利用自定义属性传值,可以是字符串、对象、函数...</code></pre>
-<p>受控组件</p>
-<pre><code>import React,{Component} from &#39;react&#39;
+<h4 id="受控组件"><a href="#受控组件" class="headerlink" title="受控组件"></a>受控组件</h4><pre><code>import React,{Component} from &#39;react&#39;
 export default class Control extends Component{
     constructor(props){
         super(props)
@@ -532,10 +531,7 @@ export default class Control extends Component{
             &lt;/div&gt;
         )
     }
-}</code></pre><ul>
-<li>父子组件之间的传值</li>
-</ul>
-<ol>
+}</code></pre><h4 id="父子组件之间的传值"><a href="#父子组件之间的传值" class="headerlink" title="父子组件之间的传值"></a>父子组件之间的传值</h4><ol>
 <li>数据从父组件流向子组件</li>
 <li>子组件数据流向父组件</li>
 </ol>
@@ -546,7 +542,7 @@ export default class Control extends Component{
 </ul>
 </li>
 </ul>
-<h5 id="父向子传值"><a href="#父向子传值" class="headerlink" title="父向子传值"></a>父向子传值</h5><p>子组件</p>
+<h4 id="父向子传值"><a href="#父向子传值" class="headerlink" title="父向子传值"></a>父向子传值</h4><p>子组件</p>
 <pre><code>import React,{Component} from &#39;react&#39;
 export default class Child extends Component{
     constructor(props){
@@ -588,7 +584,7 @@ export default class Parent extends Component{
             &lt;/div&gt;
         )
     }
-}</code></pre><h5 id="子向父传值"><a href="#子向父传值" class="headerlink" title="子向父传值"></a>子向父传值</h5><p>子组件</p>
+}</code></pre><h4 id="子向父传值"><a href="#子向父传值" class="headerlink" title="子向父传值"></a>子向父传值</h4><p>子组件</p>
 <pre><code>import React,{Component} from &#39;react&#39;
 export default class Child1 extends Component{
     constructor(props){
@@ -690,7 +686,7 @@ export default class Parent1 extends Component{
     <p><span class="copy-title">文章字数:</span><span class="post-count">1.2k</span></p>
     <p><span class="copy-title">本文作者:</span><a title="小学徒">小学徒</a></p>
     <p><span class="copy-title">发布时间:</span>2019-11-13, 20:18:42</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-13, 20:21:52</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-13, 20:29:29</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/13/react/" title="React 基础">http://1512034032.github.io/2019/11/13/react/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -752,7 +748,7 @@ export default class Parent1 extends Component{
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#Js','#Node','#Vue','#ajax','#cookis','#websocket','#H5','#ES6',],
+            'data': ['#Node','#Js','#Vue','#ajax','#cookis','#websocket','#H5','#ES6',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
