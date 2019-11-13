@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://1512034032.github.io/2019/11/13/react/</loc>
+    
+    <lastmod>2019-11-13T12:21:52.341Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://1512034032.github.io/2019/11/11/es6/</loc>
     
     <lastmod>2019-11-11T01:48:27.345Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://1512034032.github.io/2019/11/11/string/</loc>
     
     <lastmod>2019-11-11T01:28:53.878Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://1512034032.github.io/2019/11/11/react/</loc>
-    
-    <lastmod>2019-11-11T01:17:11.150Z</lastmod>
     
   </url>
   
